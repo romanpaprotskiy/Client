@@ -2,8 +2,6 @@ package Database;
 
 import java.io.Serializable;
 
-import Exceptions.*;
-
 public enum TypeCustom implements Serializable {
     UNWRITTEN("усне"), WRITTEN("письмове"), ECONOMICALLY("економічно-правове"), PROVIDE("забезпечення"), SEMINAR("семінар"), AUDYT("аудит");
 

@@ -1,6 +1,6 @@
 package Database;
 
-import java.io.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 public class Custom implements Serializable {

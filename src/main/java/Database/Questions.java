@@ -8,7 +8,7 @@ public class Questions implements Serializable {
     private String ShortContentOfQuestions, ShortContentOfAnswer;
     private Custom custom;
 
-    public Questions(int id, String ShortContentOfQuestions, String ShortContentOfAnswer,Custom custom) {
+    public Questions(int id, String ShortContentOfQuestions, String ShortContentOfAnswer, Custom custom) {
         this.id = id;
         this.ShortContentOfQuestions = ShortContentOfQuestions;
         this.ShortContentOfAnswer = ShortContentOfAnswer;
