@@ -3,16 +3,16 @@ package Database;
 import java.io.Serializable;
 import java.sql.Date;
 
-public class Executor implements Serializable {
+public class Employee implements Serializable {
 
     private int id;
     private String name;
-    private Date birthday,date;
+    private Date birthday, date;
     private double salary;
     private Department department;
-    private Position position;
+    private String position;
 
-    public Executor(int id, String name, Date birthday, Date date, double salary, Department department, Position position){
+    public Employee(int id, String name, Date birthday, Date date, double salary, Department department, String position) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -22,21 +22,21 @@ public class Executor implements Serializable {
         this.position = position;
     }
 
-    public Executor(int id, String name, Department department, Position position){
+    public Employee(int id, String name, Department department, String position) {
         this.id = id;
         this.name = name;
         this.department = department;
         this.position = position;
     }
 
-    public Executor(String name,double salary){
+    public Employee(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
 
 
     @Override
-    public String toString(){
+    public String toString() {
         return name + " " + birthday.toString() + " " + date.toString() + " " + salary + " " + department.toString() + " " + position.toString();
     }
 
@@ -44,15 +44,15 @@ public class Executor implements Serializable {
         return id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public Date getBirthday(){
+    public Date getBirthday() {
         return birthday;
     }
 
-    public Date getDate(){
+    public Date getDate() {
         return date;
     }
 
@@ -64,9 +64,6 @@ public class Executor implements Serializable {
         return department;
     }
 
-    public Position getPosition() {
-        return position;
-    }
 
 
 }

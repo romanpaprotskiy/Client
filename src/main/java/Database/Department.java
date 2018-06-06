@@ -1,6 +1,6 @@
 package Database;
 
-import java.io.Serializable;
+import java.io.*;
 
 public class Department implements Serializable {
 

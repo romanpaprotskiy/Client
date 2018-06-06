@@ -5,29 +5,32 @@ import java.io.Serializable;
 public class Questions implements Serializable {
 
     private int id;
-    private String ShortContentOfQuestions,ShortContentOfAnswer;
+    private String ShortContentOfQuestions, ShortContentOfAnswer;
+    private Custom custom;
 
-    public Questions(int id,String ShortContentOfQuestions, String ShortContentOfAnswer){
+    public Questions(int id, String ShortContentOfQuestions, String ShortContentOfAnswer,Custom custom) {
         this.id = id;
         this.ShortContentOfQuestions = ShortContentOfQuestions;
         this.ShortContentOfAnswer = ShortContentOfAnswer;
+        this.custom = custom;
     }
 
-    public Questions (String ShortContentOfQuestions, String ShortContentOfAnswer){
+    public Questions(String ShortContentOfQuestions, String ShortContentOfAnswer, Custom custom) {
         this.ShortContentOfQuestions = ShortContentOfQuestions;
         this.ShortContentOfAnswer = ShortContentOfAnswer;
+        this.custom = custom;
     }
 
-    public String getShortContentOfQuestions(){
+    public String getShortContentOfQuestions() {
         return ShortContentOfQuestions;
     }
 
-    public String getShortContentOfAnswer(){
+    public String getShortContentOfAnswer() {
         return ShortContentOfAnswer;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return ShortContentOfQuestions + " " + ShortContentOfAnswer;
     }
 
