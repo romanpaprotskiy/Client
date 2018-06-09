@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.ControllerOptions"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="276.0" prefWidth="393.0" stylesheets="@../Styles/Option.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerOptions">
+   <children>
+      <TextField fx:id="hostfield" layoutX="180.0" layoutY="105.0" text="localhost" />
+      <TextField fx:id="portfield" layoutX="180.0" layoutY="147.0" text="3306" />
+      <Button fx:id="Save" layoutX="250.0" layoutY="20.0" mnemonicParsing="false" onAction="#Saving" prefHeight="39.0" prefWidth="101.0" text="Зберегти" />
+      <Label layoutX="43.0" layoutY="105.0" prefHeight="25.0" prefWidth="48.0" text="Хост" />
+      <Label layoutX="43.0" layoutY="147.0" prefHeight="25.0" prefWidth="48.0" text="Порт" />
+      <ImageView fx:id="back" onMouseClicked="#Back" fitHeight="25.0" fitWidth="27.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/back.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
