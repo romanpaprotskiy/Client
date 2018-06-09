@@ -52,25 +52,19 @@
         <AnchorPane fx:id="main" layoutX="-1.0" layoutY="107.0" prefHeight="366.0" prefWidth="700.0"
                     stylesheets="@../Styles/Main.css">
             <children>
-                <TableView prefHeight="362.0" prefWidth="299.0">
+                <TableView onMouseClicked="#CustomTableClick" fx:id="customTable" prefHeight="196.0" prefWidth="694.0">
                     <columns>
                         <TableColumn fx:id="cId" prefWidth="75.0" text="ID"/>
                         <TableColumn fx:id="cType" prefWidth="75.0" text="Тип"/>
                         <TableColumn fx:id="cCQ" prefWidth="75.0" text="Кількість запитань"/>
                         <TableColumn fx:id="cDC" prefWidth="75.0" text="Дата замовлення"/>
-                        <TableColumn fx:id="cDE" prefWidth="75.0" text="Дата виконання"/>
-                        <TableColumn fx:id="cAA" prefWidth="75.0" text="Затверджено бухгалтером"/>
-                        <TableColumn fx:id="cAD" prefWidth="75.0" text="Затверджено директором"/>
+                        <TableColumn fx:id="cDE" prefWidth="130.0" text="Дата виконання"/>
+                        <TableColumn fx:id="cAA" prefWidth="82.0" text="Затверджено бухгалтером"/>
+                        <TableColumn fx:id="cAD" prefWidth="112.0" text="Затверджено директором"/>
                     </columns>
                 </TableView>
-                <TableView layoutX="299.0" layoutY="1.0" prefHeight="200.0" prefWidth="402.0">
-                    <columns>
-                        <TableColumn prefWidth="75.0" text="C1"/>
-                        <TableColumn prefWidth="75.0" text="C2"/>
-                    </columns>
-                </TableView>
-                <ImageView fx:id="update" fitHeight="39.0" fitWidth="40.0" layoutX="309.0" layoutY="313.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="update" onMouseClicked="#Update" fitHeight="39.0" fitWidth="40.0" layoutX="309.0"
+                           layoutY="313.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Icons/update.png"/>
                     </image>
@@ -101,6 +95,14 @@
                         <Image url="@../Icons/edit.png"/>
                     </image>
                 </ImageView>
+                <TableView fx:id="EmplCus" layoutY="196.0" prefHeight="169.0" prefWidth="300.0">
+                    <columns>
+                        <TableColumn fx:id="Cus" prefWidth="75.0" text="Особа замовник"/>
+                        <TableColumn fx:id="Rep" prefWidth="75.0" text="Особа представник"/>
+                        <TableColumn fx:id="Empl" prefWidth="75.0" text="Працівник"/>
+                        <TableColumn fx:id="Pos" prefWidth="75.0" text="Посада"/>
+                    </columns>
+                </TableView>
             </children>
         </AnchorPane>
     </children>

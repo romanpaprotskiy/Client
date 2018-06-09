@@ -41,7 +41,7 @@ public class CustomDAO extends DAO {
     public ObservableList<Custom> selectAllCustom() throws SQLException {
         statement = getConnection().createStatement();
         ObservableList<Custom> list = FXCollections.observableArrayList();
-        String sql = "SELECT id_custom,Custom.Type,CountOfQuestions,date_custom,dateOfExecution,ApprovedAccoutant,ApprovedDirector, " +
+        String sql = "SELECT id_custom,Custom.Type,CountOfQuestions,date_custom,dateOfExecution,ApprovedAccoutant,ApprovedDirector,Price, " +
                 "  Employees.id AS idEmployee,Employees.Name,Employees.Position,Customer.id AS idCustomer," +
                 " Customer.person_customer,Customer.person_representative,Customer.Address " +
                 "FROM Custom " +
@@ -51,6 +51,7 @@ public class CustomDAO extends DAO {
         while (result.next()){
             list.add(getCustomFromResultSet(result));
         }
+        statement.close();
         return list;
     }
 }
