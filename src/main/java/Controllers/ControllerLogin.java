@@ -38,13 +38,17 @@ public class ControllerLogin {
         String password = passwordfield.getText();
         try {
             Controller.connection = new ConnectionDB(Controller.host,Controller.port,login,password);
-            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/MainLayout.fxml"));
-            Controller.primaryStage.close();
-            Controller.primaryStage.setTitle("Main");
-            Controller.primaryStage.setScene(new Scene(root));
-            Controller.primaryStage.show();
+            if (!Controller.connection.getConnection().isClosed()) {
+                Parent root = FXMLLoader.load(getClass().getResource("/Layouts/MainLayout.fxml"));
+                Controller.primaryStage.close();
+                Controller.primaryStage.setTitle("Main");
+                Controller.primaryStage.setScene(new Scene(root));
+                Controller.primaryStage.show();
+            }
         } catch (IOException e) {
             ShowAlert(e);
+        } catch (SQLException e) {
+            ShowAlertAuto();
         }
     }
     private void ShowAlert(Exception e) {
