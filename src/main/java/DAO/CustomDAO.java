@@ -54,4 +54,11 @@ public class CustomDAO extends DAO {
         statement.close();
         return list;
     }
+
+    public void DeleteCustom(int index) throws SQLException {
+        statement = getConnection().createStatement();
+        String sql = "DELETE FROM Custom WHERE id_custom = " + index;
+        statement.executeUpdate(sql);
+        statement.close();
+    }
 }

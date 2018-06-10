@@ -22,6 +22,14 @@ public abstract class DAO {
         connection = connect.getConnection();
     }
 
+    public void commit() throws SQLException {
+        connection.commit();
+    }
+
+    public void rollback() throws SQLException {
+        connection.rollback();
+    }
+
 
     public Connection getConnection() {
         return connection;

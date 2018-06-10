@@ -1,16 +1,11 @@
 package Controllers;
 
 import DAO.CustomDAO;
-import DAO.EmployeeDAO;
 import Database.*;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -46,34 +41,32 @@ public class ControllerMain {
     @FXML
     public ImageView edit;
     @FXML
-    public TableColumn<Custom,Integer> cId;
+    public TableColumn<Custom, Integer> cId;
     @FXML
-    public TableColumn<Custom,String> cType;
+    public TableColumn<Custom, String> cType;
     @FXML
-    public TableColumn<Custom,Integer> cCQ;
+    public TableColumn<Custom, Integer> cCQ;
     @FXML
-    public TableColumn<Custom,Date> cDC;
+    public TableColumn<Custom, Date> cDC;
     @FXML
-    public TableColumn<Custom,Date> cDE;
+    public TableColumn<Custom, Date> cDE;
     @FXML
-    public TableColumn<Custom,Date> cAA;
+    public TableColumn<Custom, Date> cAA;
     @FXML
-    public TableColumn<Custom,Date> cAD;
+    public TableColumn<Custom, Date> cAD;
     @FXML
-    public TableView customTable;
+    public TableView<Custom> customTable;
     @FXML
-    public TableView EmplCus;
+    private Label CusLabel;
     @FXML
-    public TableColumn<Custom,String> Cus;
+    private Label RepLabel;
     @FXML
-    public TableColumn<Custom,String> Rep;
+    private Label EmplLabel;
     @FXML
-    public TableColumn<Custom,String> Empl;
-    @FXML
-    public TableColumn<Custom,String> Pos;
+    private Label PosLabel;
 
     @FXML
-    private void initialize () {
+    private void initialize() {
         cId.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         cType.setCellValueFactory(cellData -> cellData.getValue().typeProperty());
         cCQ.setCellValueFactory(cellData -> cellData.getValue().countOfQuestionsProperty().asObject());
@@ -81,10 +74,7 @@ public class ControllerMain {
         cDE.setCellValueFactory(cellData -> cellData.getValue().dateOfExecutionProperty());
         cAA.setCellValueFactory(cellData -> cellData.getValue().approvedAccoutantProperty());
         cAD.setCellValueFactory(cellData -> cellData.getValue().approvedDirectionProperty());
-        Cus.setCellValueFactory(cellData -> cellData.getValue().customerProperty().getValue().person_customerProperty());
-        Rep.setCellValueFactory(cellData -> cellData.getValue().customerProperty().getValue().person_representativeProperty());
-        Empl.setCellValueFactory(cellData -> cellData.getValue().employeeProperty().getValue().nameProperty());
-        Pos.setCellValueFactory(cellData -> cellData.getValue().employeeProperty().getValue().positionProperty());
+        customTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getEmployeeClick(newValue));
     }
 
     @FXML
@@ -123,33 +113,48 @@ public class ControllerMain {
         }
     }
 
-    public void CustomTableClick(MouseEvent mouseEvent) {
-        try {
-            CustomDAO customDAO = new CustomDAO(Controller.connection);
-            ObservableList<Custom> list = FXCollections.observableArrayList();
-            list.addAll(customDAO.selectAllCustom());
-            EmplCus.setItems(list);
-        } catch (SQLException e) {
-            ShowAlert(e);
-        }
-    }
 
-    private void ShowAlert(SQLException e) {
+    private void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("Error in connection");
+        alert.setHeaderText("Error in " + e.getMessage());
         alert.setContentText("Error" + e);
         alert.showAndWait();
     }
 
-    public void EmplClick(TableColumn.CellEditEvent<Custom, Integer> customIntegerCellEditEvent) {
+    public void getEmployeeClick(Custom custom) {
+        CusLabel.setText(custom.getCustomer().getPerson_customer());
+        RepLabel.setText(custom.getCustomer().getPerson_representative());
+        EmplLabel.setText(custom.getEmployee().getName());
+        PosLabel.setText(custom.getEmployee().getPosition());
+    }
+
+    @FXML
+    public void ExitApp(MouseEvent mouseEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit");
+        alert.setHeaderText("Підтвердіть дію");
+        alert.setContentText("Ви дійсно хочете вийти?");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK) Controller.primaryStage.close();
+    }
+
+    @FXML
+    public void DeleteCustom(MouseEvent mouseEvent) {
+        int indexDB = customTable.getSelectionModel().getSelectedItem().getId();
+        int index = customTable.getSelectionModel().getSelectedIndex();
         try {
             CustomDAO customDAO = new CustomDAO(Controller.connection);
-            ObservableList<Custom> list = FXCollections.observableArrayList();
-            list.addAll(customDAO.selectAllCustom());
-            EmployeeDAO employeeDAO = new EmployeeDAO(Controller.connection);
-            //employeeDAO.searchEmployee();
-            //EmplCus.setItems(list);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "DeleteCustom", ButtonType.YES, ButtonType.NO);
+            alert.setTitle("Delete");
+            alert.setHeaderText("Підтвердіть дію");
+            alert.setContentText("Ви дійсно хочете видалити?" + "\n" + customTable.getSelectionModel().getSelectedItem().getId() +
+                    " " + customTable.getSelectionModel().getSelectedItem().getType());
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                customDAO.DeleteCustom(indexDB);
+                customTable.getItems().remove(index);
+            }
         } catch (SQLException e) {
             ShowAlert(e);
         }

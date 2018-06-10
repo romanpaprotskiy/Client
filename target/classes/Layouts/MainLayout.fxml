@@ -12,97 +12,99 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="458.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controllers.ControllerMain">
+<AnchorPane prefHeight="458.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMain">
     <children>
         <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="700.0" stylesheets="@../Styles/Main.css">
             <children>
-                <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0"
-                           onMouseClicked="#CustomersClick" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" onMouseClicked="#CustomersClick" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/Customers.png"/>
+                        <Image url="@../Icons/Customers.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0"
-                           onMouseClicked="#EmployeesClick" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" onMouseClicked="#EmployeesClick" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/Employees.png"/>
+                        <Image url="@../Icons/Employees.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0"
-                           onMouseClicked="#StatisticsClick" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" onMouseClicked="#StatisticsClick" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/statistics.png"/>
+                        <Image url="@../Icons/statistics.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="customs" fitHeight="54.0" fitWidth="54.0" layoutX="14.0" layoutY="26.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="customs" fitHeight="54.0" fitWidth="54.0" layoutX="14.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/order.png"/>
+                        <Image url="@../Icons/order.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="exit" fitHeight="39.0" fitWidth="39.0" layoutX="647.0" layoutY="34.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="exit" fitHeight="39.0" fitWidth="39.0" layoutX="647.0" layoutY="34.0" onMouseClicked="#ExitApp" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/exit.png"/>
+                        <Image url="@../Icons/exit.png" />
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="main" layoutX="-1.0" layoutY="107.0" prefHeight="366.0" prefWidth="700.0"
-                    stylesheets="@../Styles/Main.css">
+        <AnchorPane fx:id="main" layoutX="-1.0" layoutY="107.0" prefHeight="366.0" prefWidth="700.0" stylesheets="@../Styles/Main.css">
             <children>
-                <TableView onMouseClicked="#CustomTableClick" fx:id="customTable" prefHeight="196.0" prefWidth="694.0">
+                <TableView fx:id="customTable" prefHeight="196.0" prefWidth="694.0">
                     <columns>
-                        <TableColumn fx:id="cId" prefWidth="75.0" text="ID"/>
-                        <TableColumn fx:id="cType" prefWidth="75.0" text="Тип"/>
-                        <TableColumn fx:id="cCQ" prefWidth="75.0" text="Кількість запитань"/>
-                        <TableColumn fx:id="cDC" prefWidth="75.0" text="Дата замовлення"/>
-                        <TableColumn fx:id="cDE" prefWidth="130.0" text="Дата виконання"/>
-                        <TableColumn fx:id="cAA" prefWidth="82.0" text="Затверджено бухгалтером"/>
-                        <TableColumn fx:id="cAD" prefWidth="112.0" text="Затверджено директором"/>
+                        <TableColumn fx:id="cId" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="cType" prefWidth="75.0" text="Тип" />
+                        <TableColumn fx:id="cCQ" prefWidth="75.0" text="Кількість запитань" />
+                        <TableColumn fx:id="cDC" prefWidth="75.0" text="Дата замовлення" />
+                        <TableColumn fx:id="cDE" prefWidth="130.0" text="Дата виконання" />
+                        <TableColumn fx:id="cAA" prefWidth="82.0" text="Затверджено бухгалтером" />
+                        <TableColumn fx:id="cAD" prefWidth="112.0" text="Затверджено директором" />
                     </columns>
                 </TableView>
-                <ImageView fx:id="update" onMouseClicked="#Update" fitHeight="39.0" fitWidth="40.0" layoutX="309.0"
-                           layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="update" fitHeight="39.0" fitWidth="40.0" layoutX="309.0" layoutY="313.0" onMouseClicked="#Update" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/update.png"/>
+                        <Image url="@../Icons/update.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="add" fitHeight="39.0" fitWidth="39.0" layoutX="640.0" layoutY="213.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="add" fitHeight="39.0" fitWidth="39.0" layoutX="640.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/add.png"/>
+                        <Image url="@../Icons/add.png" />
                     </image>
                 </ImageView>
-                <TextField layoutX="309.0" layoutY="220.0" prefHeight="25.0" prefWidth="164.0"/>
-                <ImageView fx:id="search" fitHeight="31.0" fitWidth="39.0" layoutX="482.0" layoutY="217.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <TextField layoutX="309.0" layoutY="220.0" prefHeight="25.0" prefWidth="164.0" />
+                <ImageView fx:id="search" fitHeight="31.0" fitWidth="39.0" layoutX="482.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/search.png"/>
+                        <Image url="@../Icons/search.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="delete" fitHeight="39.0" fitWidth="39.0" layoutX="587.0" layoutY="213.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="delete" fitHeight="39.0" fitWidth="39.0" layoutX="529.0" layoutY="213.0" onMouseClicked="#DeleteCustom" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/delete.png"/>
+                        <Image url="@../Icons/delete.png" />
                     </image>
                 </ImageView>
-                <ComboBox fx:id="typeSearch" layoutX="309.0" layoutY="257.0" prefHeight="25.0" prefWidth="164.0"/>
-                <ImageView fx:id="edit" fitHeight="39.0" fitWidth="39.0" layoutX="533.0" layoutY="213.0"
-                           pickOnBounds="true" preserveRatio="true">
+                <ComboBox fx:id="typeSearch" layoutX="309.0" layoutY="257.0" prefHeight="25.0" prefWidth="164.0" />
+                <ImageView fx:id="edit" fitHeight="39.0" fitWidth="39.0" layoutX="582.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../Icons/edit.png"/>
+                        <Image url="@../Icons/edit.png" />
                     </image>
                 </ImageView>
-                <TableView fx:id="EmplCus" layoutY="196.0" prefHeight="169.0" prefWidth="300.0">
-                    <columns>
-                        <TableColumn fx:id="Cus" prefWidth="75.0" text="Особа замовник"/>
-                        <TableColumn fx:id="Rep" prefWidth="75.0" text="Особа представник"/>
-                        <TableColumn fx:id="Empl" prefWidth="75.0" text="Працівник"/>
-                        <TableColumn fx:id="Pos" prefWidth="75.0" text="Посада"/>
-                    </columns>
-                </TableView>
+                <GridPane layoutX="8.0" layoutY="216.0" prefHeight="107.0" prefWidth="291.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="142.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="149.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label prefHeight="27.0" prefWidth="139.0" text="Особа представник" GridPane.rowIndex="1" />
+                        <Label prefHeight="15.0" prefWidth="77.0" text="Працівник" GridPane.rowIndex="2" />
+                      <Label text="Посада" GridPane.rowIndex="3" />
+                        <Label prefHeight="25.0" prefWidth="127.0" text="Особа замовник" />
+                  <Label fx:id="CusLabel" prefHeight="57.0" prefWidth="149.0" GridPane.columnIndex="1" />
+                  <Label fx:id="RepLabel" prefHeight="57.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="EmplLabel" prefHeight="57.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="PosLabel" prefHeight="57.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </children>
+                </GridPane>
             </children>
         </AnchorPane>
     </children>
