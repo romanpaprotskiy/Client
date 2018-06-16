@@ -4,6 +4,7 @@ import javafx.beans.property.*;
 
 import java.io.*;
 import java.sql.*;
+import java.time.LocalDate;
 
 public class Custom implements Serializable {
 
@@ -27,46 +28,6 @@ public class Custom implements Serializable {
         this.ApprovedAccoutant = new SimpleObjectProperty<Date>();
         this.price = new SimpleDoubleProperty();
     }
-
-    public Custom(int id, Customer customer, String typeCustom, int countOfQuestions, Employee employee,
-                  Date date_custom, Date dateOfExecution, Date ApprovedDirection, Date ApprovedAccoutant) {
-        this.id = new SimpleIntegerProperty(id);
-        this.customer = new SimpleObjectProperty<Customer>(customer);
-        this.type = new SimpleStringProperty(typeCustom);
-        this.CountOfQuestions = new SimpleIntegerProperty(countOfQuestions);
-        this.employee = new SimpleObjectProperty<Employee>(employee);
-        this.date_custom = new SimpleObjectProperty<Date>(date_custom);
-        this.dateOfExecution = new SimpleObjectProperty<Date>(dateOfExecution);
-        this.ApprovedDirection = new SimpleObjectProperty<Date>(ApprovedAccoutant);
-        this.ApprovedAccoutant = new SimpleObjectProperty<Date>(ApprovedDirection);
-    }
-    public Custom(int id, Customer customer, String typeCustom, int countOfQuestions, Employee employee,
-                  Date date_custom, Date dateOfExecution, Date ApprovedAccoutant, Date ApprovedDirection, double price) {
-        this.id = new SimpleIntegerProperty(id);
-        this.customer = new SimpleObjectProperty<Customer>(customer);
-        this.type = new SimpleStringProperty(typeCustom);
-        this.CountOfQuestions = new SimpleIntegerProperty(countOfQuestions);
-        this.employee = new SimpleObjectProperty<Employee>(employee);
-        this.date_custom = new SimpleObjectProperty<Date>(date_custom);
-        this.dateOfExecution = new SimpleObjectProperty<Date>(dateOfExecution);
-        this.ApprovedDirection = new SimpleObjectProperty<Date>(ApprovedAccoutant);
-        this.ApprovedAccoutant = new SimpleObjectProperty<Date>(ApprovedDirection);
-        this.price = new SimpleDoubleProperty(price);
-    }
-
-    public Custom(Customer customer, String typeCustom, int countOfQuestions, Employee employee) {
-        this.customer = new SimpleObjectProperty<Customer>(customer);
-        this.type = new SimpleStringProperty(typeCustom);
-        this.CountOfQuestions = new SimpleIntegerProperty(countOfQuestions);
-        this.employee = new SimpleObjectProperty<Employee>(employee);
-    }
-
-    public Custom(Customer customer, String typeCustom, int countOfQuestions) {
-        this.customer = new SimpleObjectProperty<Customer>(customer);
-        this.type = new SimpleStringProperty(typeCustom);
-        this.CountOfQuestions = new SimpleIntegerProperty(countOfQuestions);
-    }
-
 
     public double getPrice() {
         return price.get();
@@ -180,11 +141,11 @@ public class Custom implements Serializable {
         return ApprovedAccoutant.get();
     }
 
-    public SimpleObjectProperty<Date> approvedAccoutantProperty() {
+    public SimpleObjectProperty<Date> approvedAccountantProperty() {
         return ApprovedAccoutant;
     }
 
-    public void setApprovedAccoutant(Date approvedAccoutant) {
+    public void setApprovedAccountant(Date approvedAccoutant) {
         this.ApprovedAccoutant.set(approvedAccoutant);
     }
 }

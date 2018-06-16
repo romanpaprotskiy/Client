@@ -12,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerOptions implements Initializable {
+public class ControllerOptions extends Controller implements Initializable {
 
     @FXML
     public TextField hostfield;
@@ -41,9 +41,9 @@ public class ControllerOptions implements Initializable {
 
     @FXML
     public void Back(MouseEvent mouseEvent) {
-        Controller.primaryStage.close();
-        Controller.primaryStage = Controller.tempStage;
-        Controller.primaryStage.show();
+        primaryStage.close();
+        primaryStage = Controller.tempStage;
+        primaryStage.show();
     }
 
     @Override

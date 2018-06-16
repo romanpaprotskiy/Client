@@ -7,26 +7,13 @@ import java.io.Serializable;
 public class Customer implements Serializable {
 
     private IntegerProperty id;
-    private StringProperty person_customer,person_representative,address;
+    private StringProperty person_customer,person_representative,Address;
 
     public Customer(){
         this.id = new SimpleIntegerProperty();
         this.person_customer = new SimpleStringProperty();
         this.person_representative = new SimpleStringProperty();
-        this.address = new SimpleStringProperty();
-    }
-
-    public Customer(int id,String person_customer,String person_representative,String address) {
-        this.id = new SimpleIntegerProperty(id);
-        this.person_customer = new SimpleStringProperty(person_customer);
-        this.person_representative = new SimpleStringProperty(person_representative);
-        this.address = new SimpleStringProperty(address);
-    }
-
-    public Customer(String person_customer,String person_representative,String address){
-        this.person_customer = new SimpleStringProperty(person_customer);
-        this.person_representative = new SimpleStringProperty(person_representative);
-        this.address = new SimpleStringProperty(address);
+        this.Address = new SimpleStringProperty();
     }
 
     public int getId() {
@@ -63,5 +50,17 @@ public class Customer implements Serializable {
 
     public void setPerson_representative(String person_representative) {
         this.person_representative.set(person_representative);
+    }
+
+    public String getAddress() {
+        return Address.get();
+    }
+
+    public StringProperty addressProperty() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        this.Address.set(address);
     }
 }

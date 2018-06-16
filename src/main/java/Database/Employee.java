@@ -1,5 +1,6 @@
 package Database;
 
+import javafx.beans.NamedArg;
 import javafx.beans.property.*;
 
 import java.io.Serializable;
@@ -22,34 +23,6 @@ public class Employee implements Serializable {
         this.salary = new SimpleDoubleProperty();
         this.department = new SimpleObjectProperty<Department>();
         this.position = new SimpleStringProperty();
-    }
-
-    public Employee(int id, String name, Date birthday, Date date, double salary, Department department, String position) {
-        this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name);
-        this.birthday = new SimpleObjectProperty<Date>(birthday);
-        this.date = new SimpleObjectProperty<Date>(date);
-        this.salary = new SimpleDoubleProperty(salary);
-        this.department = new SimpleObjectProperty<Department>(department);
-        this.position = new SimpleStringProperty(position);
-    }
-
-    public Employee(int id, String name, Department department, String position) {
-        this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name);
-        this.department = new SimpleObjectProperty<Department>(department);
-        this.position = new SimpleStringProperty(position);
-    }
-
-    public Employee(String name, double salary) {
-        this.name = new SimpleStringProperty(name);
-        this.salary = new SimpleDoubleProperty(salary);
-    }
-
-    public Employee(int id,String name,String position) {
-        this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name);
-        this.position = new SimpleStringProperty(position);
     }
 
     public int getId() {
@@ -134,5 +107,10 @@ public class Employee implements Serializable {
 
     public void setPosition(String position) {
         this.position.set(position);
+    }
+
+    @Override
+    public String toString(){
+        return name.toString();
     }
 }

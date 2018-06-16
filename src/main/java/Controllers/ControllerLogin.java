@@ -1,7 +1,6 @@
 package Controllers;
 
 
-import javafx.application.Application;
 import Connection.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,7 +18,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.sql.SQLException;
 
-public class ControllerLogin {
+public class ControllerLogin extends Controller {
 
     @FXML
     public PasswordField passwordfield;
@@ -37,26 +36,18 @@ public class ControllerLogin {
         String login = loginfield.getText();
         String password = passwordfield.getText();
         try {
-            Controller.connection = new ConnectionDB(Controller.host,Controller.port,login,password);
-            if (!Controller.connection.getConnection().isClosed()) {
+            connection = new ConnectionDB(Controller.host,Controller.port,login,password);
+            if (!connection.getConnection().isClosed()) {
                 Parent root = FXMLLoader.load(getClass().getResource("/Layouts/MainLayout.fxml"));
-                Controller.primaryStage.close();
-                Controller.primaryStage.setTitle("Main");
-                Controller.primaryStage.setScene(new Scene(root));
-                Controller.primaryStage.show();
+                primaryStage.setTitle("Main");
+                primaryStage.setScene(new Scene(root));
+                primaryStage.show();
             }
         } catch (IOException e) {
             ShowAlert(e);
         } catch (SQLException e) {
             ShowAlertAuto();
         }
-    }
-    private void ShowAlert(Exception e) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText("Error in I/O");
-        alert.setContentText("Error" + e);
-        alert.showAndWait();
     }
 
     private void ShowAlertAuto() {
@@ -69,7 +60,7 @@ public class ControllerLogin {
 
     @FXML
     public void exited(ActionEvent actionEvent) {
-        Controller.primaryStage.close();
+        primaryStage.close();
     }
 
     @FXML
@@ -80,10 +71,10 @@ public class ControllerLogin {
         } catch (IOException e) {
             ShowAlert(e);
         }
-        Controller.tempStage = Controller.primaryStage;
-        Controller.primaryStage.close();
+        tempStage = primaryStage;
+        primaryStage.close();
         Stage stage = new Stage();
-        Controller.primaryStage = stage;
+        primaryStage = stage;
         stage.setTitle("Settings");
         stage.setScene(new Scene(root));
         stage.show();

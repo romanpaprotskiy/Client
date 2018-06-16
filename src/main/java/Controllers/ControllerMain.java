@@ -4,17 +4,22 @@ import DAO.CustomDAO;
 import Database.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 
-public class ControllerMain {
+public class ControllerMain extends Controller{
 
     @FXML
     public ImageView customers;
@@ -57,6 +62,8 @@ public class ControllerMain {
     @FXML
     public TableView<Custom> customTable;
     @FXML
+    public TableColumn<Custom,Double> price;
+    @FXML
     private Label CusLabel;
     @FXML
     private Label RepLabel;
@@ -72,33 +79,10 @@ public class ControllerMain {
         cCQ.setCellValueFactory(cellData -> cellData.getValue().countOfQuestionsProperty().asObject());
         cDC.setCellValueFactory(cellData -> cellData.getValue().date_customProperty());
         cDE.setCellValueFactory(cellData -> cellData.getValue().dateOfExecutionProperty());
-        cAA.setCellValueFactory(cellData -> cellData.getValue().approvedAccoutantProperty());
+        cAA.setCellValueFactory(cellData -> cellData.getValue().approvedAccountantProperty());
         cAD.setCellValueFactory(cellData -> cellData.getValue().approvedDirectionProperty());
+        price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
         customTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getEmployeeClick(newValue));
-    }
-
-    @FXML
-    public void SettingsClick(MouseEvent mouseEvent) {
-
-    }
-
-    @FXML
-    public void CustomersClick(MouseEvent mouseEvent) {
-
-    }
-
-    @FXML
-    public void EmployeesClick(MouseEvent mouseEvent) {
-
-    }
-
-    @FXML
-    public void StatisticsClick(MouseEvent mouseEvent) {
-
-    }
-
-    public void CustomsClick(MouseEvent mouseEvent) throws SQLException {
-
     }
 
     @FXML
@@ -113,21 +97,13 @@ public class ControllerMain {
         }
     }
 
-
-    private void ShowAlert(Exception e) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText("Error in " + e.getMessage());
-        alert.setContentText("Error" + e);
-        alert.showAndWait();
-    }
-
-    public void getEmployeeClick(Custom custom) {
+    private void getEmployeeClick(Custom custom) {
         CusLabel.setText(custom.getCustomer().getPerson_customer());
         RepLabel.setText(custom.getCustomer().getPerson_representative());
         EmplLabel.setText(custom.getEmployee().getName());
         PosLabel.setText(custom.getEmployee().getPosition());
     }
+
 
     @FXML
     public void ExitApp(MouseEvent mouseEvent) {
@@ -136,7 +112,7 @@ public class ControllerMain {
         alert.setHeaderText("Підтвердіть дію");
         alert.setContentText("Ви дійсно хочете вийти?");
         alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK) Controller.primaryStage.close();
+        if (alert.getResult() == ButtonType.OK) primaryStage.close();
     }
 
     @FXML
@@ -158,5 +134,19 @@ public class ControllerMain {
         } catch (SQLException e) {
             ShowAlert(e);
         }
+    }
+
+    @FXML
+    public void addCustom(MouseEvent mouseEvent) {
+        scene = primaryStage.getScene();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Layouts/AddCustom.fxml"));
+        } catch (IOException e) {
+            ShowAlert(e);
+        }
+        primaryStage.setTitle("AddCustom");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
     }
 }

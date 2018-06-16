@@ -31,7 +31,7 @@ public class CustomDAO extends DAO {
         custom.setCountOfQuestions(result.getInt(COUNT_OF_QUEST));
         custom.setDate_custom(result.getDate(DATE_CUSTOM));
         custom.setDateOfExecution(result.getDate(DATE_EXC));
-        custom.setApprovedAccoutant(result.getDate(APP_ACC));
+        custom.setApprovedAccountant(result.getDate(APP_ACC));
         custom.setApprovedDirection(result.getDate(APP_DIR));
         custom.setPrice(result.getDouble(PRICE));
         return custom;
@@ -60,5 +60,16 @@ public class CustomDAO extends DAO {
         String sql = "DELETE FROM Custom WHERE id_custom = " + index;
         statement.executeUpdate(sql);
         statement.close();
+    }
+
+    public void addCustom(String type,int count,Date date,Employee employee,Customer customer) throws SQLException {
+        String sql = "INSERT INTO Custom(Type, CountOfQuestions, date_custom, Employee, Customer)" +
+                "VALUES (?,?,?,?,?,?);";
+        PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
+        preparedStatement.setNString(1,type);
+        preparedStatement.setInt(2,count);
+        preparedStatement.setDate(3,date_custom);
+        preparedStatement.setInt(4,employee.getId());
+        preparedStatement.setInt(5,customer.getId());
     }
 }
