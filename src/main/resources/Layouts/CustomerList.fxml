@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="400.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.CustomerListController">
+    <children>
+        <AnchorPane prefHeight="95.0" prefWidth="413.0" style="-fx-background-color: #3b66aa;">
+            <children>
+                <ImageView fx:id="add" fitHeight="45.0" fitWidth="45.0" layoutX="354.0" layoutY="20.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/plus.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="customerListTable" layoutY="95.0" prefHeight="304.0" prefWidth="413.0">
+            <columns>
+                <TableColumn fx:id="idCus" prefWidth="75.0" text="ID"/>
+                <TableColumn fx:id="Cus" prefWidth="75.0" text="Особа замовник"/>
+                <TableColumn fx:id="Rep" prefWidth="75.0" text="Особа представник"/>
+                <TableColumn fx:id="Addr" prefWidth="75.0" text="Адреса"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

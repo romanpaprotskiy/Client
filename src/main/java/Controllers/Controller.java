@@ -1,5 +1,6 @@
 package Controllers;
 
+import Database.Customer;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
@@ -16,6 +17,7 @@ public  class Controller {
     public static String password;
     public static String host = "localhost";
     public static int port = 3306;
+    public static Customer customer;
 
     public void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

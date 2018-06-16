@@ -83,11 +83,21 @@ public class ControllerMain extends Controller{
         cAD.setCellValueFactory(cellData -> cellData.getValue().approvedDirectionProperty());
         price.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
         customTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getEmployeeClick(newValue));
+        try {
+            CustomDAO customDAO = new CustomDAO(connection);
+            ObservableList<Custom> list = FXCollections.observableArrayList();
+            list.addAll(customDAO.selectAllCustom());
+            customTable.setItems(list);
+        } catch (SQLException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void Update(MouseEvent mouseEvent) {
         try {
+            customTable.getItems().removeAll();
             CustomDAO customDAO = new CustomDAO(Controller.connection);
             ObservableList<Custom> list = FXCollections.observableArrayList();
             list.addAll(customDAO.selectAllCustom());

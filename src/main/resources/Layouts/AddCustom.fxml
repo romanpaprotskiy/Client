@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -38,9 +39,9 @@
             <DatePicker fx:id="AppAcc" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <DatePicker fx:id="AppDir" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <ComboBox fx:id="Employee" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <ComboBox fx:id="Customer" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Label text="Вартість" GridPane.rowIndex="6" />
             <TextField fx:id="price" prefHeight="25.0" prefWidth="96.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="CustomerText" GridPane.columnIndex="1" GridPane.rowIndex="8" />
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="168.0" />
@@ -58,7 +59,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <ImageView fx:id="Calc" fitHeight="34.0" fitWidth="40.0" layoutX="419.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Calc" fitHeight="34.0" fitWidth="40.0" layoutX="419.0" layoutY="376.0" onMouseClicked="#CusClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/calc.png" />
          </image>

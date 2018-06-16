@@ -26,8 +26,8 @@ public class CustomerDAO extends DAO {
     private Customer getCustomerFromResultSet(ResultSet result) throws SQLException {
         Customer customer = new Customer();
         customer.setId(result.getInt(ID_CUSTOMER));
-        customer.setPerson_customer(PER_CUS);
-        customer.setPerson_representative(PER_REP);
+        customer.setPerson_customer(result.getString(PER_CUS));
+        customer.setPerson_representative(result.getString(PER_REP));
         customer.setAddress(result.getString(CUS_ADD));
         return customer;
     }
