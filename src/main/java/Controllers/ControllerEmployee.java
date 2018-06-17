@@ -106,4 +106,29 @@ public class ControllerEmployee extends Controller {
         primaryStage.setScene(scene1);
         primaryStage.show();
     }
+
+    @FXML
+    public void DeleteEmployee(MouseEvent mouseEvent) {
+        int indexDB = EmployeeTable.getSelectionModel().getSelectedItem().getId();
+        int index = EmployeeTable.getSelectionModel().getSelectedIndex();
+        try {
+            EmployeeDAO employeeDAO = new EmployeeDAO(Controller.connection);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "DeleteCustom", ButtonType.YES, ButtonType.NO);
+            alert.setTitle("Delete");
+            alert.setHeaderText("Підтвердіть дію");
+            alert.setContentText("Ви дійсно хочете видалити?" + "\n" + EmployeeTable.getSelectionModel().getSelectedItem().getId() +
+                    " " + EmployeeTable.getSelectionModel().getSelectedItem().getName());
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                employeeDAO.DeleteEmployee(indexDB);
+                EmployeeTable.getItems().remove(index);
+            }
+        } catch (SQLException e) {
+            ShowAlert(e);
+        }
+    }
+
+    public void addEmpl(MouseEvent mouseEvent) {
+
+    }
 }

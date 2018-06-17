@@ -78,4 +78,45 @@ public class EmployeeDAO extends DAO {
         return list;
     }
 
+    public void addEmployee (){
+        String sql = "";
+    }
+
+    public void DeleteEmployee(int index) throws SQLException {
+        statement = getConnection().createStatement();
+        String sql = "DELETE FROM Employees WHERE Employees.id = " + index;
+        statement.executeUpdate(sql);
+        statement.close();
+    }
+
+    public void addDepartment(String str) throws SQLException {
+        String sql = "INSERT INTO Department(NameDep) VALUES (?)";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,str);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public ObservableList<Department> selectAllDepartment() throws SQLException {
+        String sql = "SELECT ID AS idDep,NameDep FROM Department";
+        statement = getConnection().createStatement();
+        ResultSet result = statement.executeQuery(sql);
+        ObservableList<Department> list = FXCollections.observableArrayList();
+        while (result.next()) {
+            Department department = new Department();
+            department.setID(result.getInt(ID_DEPARTMENT));
+            department.setName(result.getString(NAME_DEP));
+            list.add(department);
+        }
+        statement.close();
+        return list;
+    }
+
+    public void deletedepartment(int id) throws SQLException {
+        String sql = "DELETE FROM Department WHERE Department.ID = " + id + ";";
+        statement = getConnection().createStatement();
+        statement.executeUpdate(sql);
+        statement.close();
+    }
+
 }

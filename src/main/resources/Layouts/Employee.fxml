@@ -27,7 +27,7 @@
                 <TableColumn fx:id="DateExe" prefWidth="97.0" text="Дата виконання" />
             </columns>
         </TableView>
-        <ImageView fx:id="delete" fitHeight="37.0" fitWidth="42.0" layoutX="540.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="delete" onMouseClicked="#DeleteEmployee" fitHeight="37.0" fitWidth="42.0" layoutX="540.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Icons/delete.png" />
             </image>
@@ -37,7 +37,7 @@
                 <Image url="@../Icons/edit.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="add" fitHeight="37.0" fitWidth="37.0" layoutX="640.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="add" onMouseClicked="#addEmpl" fitHeight="37.0" fitWidth="37.0" layoutX="640.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Icons/add.png" />
             </image>

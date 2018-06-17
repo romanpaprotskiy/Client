@@ -37,7 +37,7 @@ public class CustomDAO extends DAO {
         return custom;
     }
 
-    private Custom getCustomEmployeeFromResyltSet(ResultSet result) throws SQLException {
+    private Custom getCustomEmployeeFromResultSet(ResultSet result) throws SQLException {
         Custom custom = new Custom();
         custom.setId(result.getInt(ID_CUSTOM));
         custom.setType(result.getString(TYPE));
@@ -45,6 +45,16 @@ public class CustomDAO extends DAO {
         custom.setDateOfExecution(result.getDate(DATE_EXC));
         return custom;
     }
+
+    private Custom getCustomForEditFromResultSet(ResultSet result) throws SQLException {
+        Custom custom = new Custom();
+        custom.setDateOfExecution(result.getDate(DATE_EXC));
+        custom.setApprovedAccountant(result.getDate(APP_ACC));
+        custom.setApprovedDirection(result.getDate(APP_DIR));
+        custom.setPrice(result.getDouble(PRICE));
+        return custom;
+    }
+
 
     //return all fields from the table "Custom"
     public ObservableList<Custom> selectAllCustom() throws SQLException {
@@ -91,8 +101,31 @@ public class CustomDAO extends DAO {
         ResultSet result = statement.executeQuery(sql);
         ObservableList<Custom> list = FXCollections.observableArrayList();
         while (result.next()) {
-            list.add(getCustomEmployeeFromResyltSet(result));
+            list.add(getCustomEmployeeFromResultSet(result));
         }
         return list;
+    }
+
+    public void editCustom(int id,Date dateofExc,Date AppAcc,Date AppDir,Double price) throws SQLException {
+        String sql = "UPDATE Custom " +
+                "SET dateOfExecution = ?,ApprovedAccoutant = ?,ApprovedDirector = ?,Price = ? " +
+                "WHERE id_custom = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,dateofExc);
+        statement.setDate(2,AppAcc);
+        statement.setDate(3,AppDir);
+        statement.setDouble(4,price);
+        statement.setInt(5,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public Custom getCustomForEdit(int id) throws SQLException {
+        String sql = "SELECT dateOfExecution,ApprovedAccoutant,ApprovedDirector,Price " +
+                "FROM Custom  " +
+                "WHERE id_custom = " + id + ";";
+        statement = getConnection().createStatement();
+        ResultSet result = statement.executeQuery(sql);
+        return getCustomForEditFromResultSet(result);
     }
 }

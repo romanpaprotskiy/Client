@@ -159,15 +159,20 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void EditClick(MouseEvent mouseEvent) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/EditLayout.fxml"));
-            primaryStage.setTitle("Edit");
-            primaryStage.setScene(new Scene(root));
-            primaryStage.setResizable(false);
-            primaryStage.show();
-        } catch (IOException e) {
-            ShowAlert(e);
-            e.printStackTrace();
+        scene = primaryStage.getScene();
+        Controller.custom = customTable.getSelectionModel().getSelectedItem();
+        if (Controller.custom == null) ShowAlert(new NullPointerException("Виберіть елемент для редагування"));
+        else {
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/Layouts/EditWindow.fxml"));
+                primaryStage.setTitle("Edit");
+                primaryStage.setScene(new Scene(root));
+                primaryStage.setResizable(false);
+                primaryStage.show();
+            } catch (IOException e) {
+                ShowAlert(e);
+                e.printStackTrace();
+            }
         }
     }
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="283.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.ControllerDepartment" stylesheets="/Styles/Add.css">
+    <children>
+        <TableView fx:id="deptable" prefHeight="200.0" prefWidth="272.0">
+            <columns>
+                <TableColumn fx:id="idDep" prefWidth="75.0" text="ID"/>
+                <TableColumn fx:id="NameDep" prefWidth="127.0" text="Назва відділу"/>
+            </columns>
+        </TableView>
+        <ImageView onMouseClicked="#AddDep" fitHeight="39.0" fitWidth="47.0" layoutX="219.0" layoutY="218.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../Icons/plus.png"/>
+            </image>
+        </ImageView>
+        <ImageView onMouseClicked="#DeleteDep" fitHeight="39.0" fitWidth="39.0" layoutX="14.0" layoutY="218.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../Icons/delete.png"/>
+            </image>
+        </ImageView>
+        <TextField fx:id="addDepName" layoutX="86.0" layoutY="225.0" prefHeight="25.0" prefWidth="116.0"/>
+    </children>
+</AnchorPane>
