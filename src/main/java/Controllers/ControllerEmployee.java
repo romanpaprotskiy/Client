@@ -6,6 +6,9 @@ import Database.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
@@ -13,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 
@@ -43,7 +47,7 @@ public class ControllerEmployee extends Controller {
     @FXML
     public TableColumn<Employee,String> Pos;
     @FXML
-    public TableColumn<Department,String> Dep;
+    public TableColumn<Employee,String> Dep;
     @FXML
     public TableColumn<Employee,Double> Sel;
     @FXML
@@ -64,6 +68,7 @@ public class ControllerEmployee extends Controller {
         BDate.setCellValueFactory(cellData -> cellData.getValue().birthdayProperty());
         DateV.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
         Pos.setCellValueFactory(cellData -> cellData.getValue().positionProperty());
+        Dep.setCellValueFactory(cellData -> cellData.getValue().departmentProperty().getValue().nameProperty());
         Sel.setCellValueFactory(cellData -> cellData.getValue().salaryProperty().asObject());
         idCus.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         Type.setCellValueFactory(cellData -> cellData.getValue().typeProperty());
@@ -129,6 +134,16 @@ public class ControllerEmployee extends Controller {
     }
 
     public void addEmpl(MouseEvent mouseEvent) {
-
+        scene3 = primaryStage.getScene();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/AddEmployee.fxml"));
+            primaryStage.setTitle("Add");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setResizable(false);
+            primaryStage.show();
+        } catch (IOException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
     }
 }

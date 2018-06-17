@@ -26,6 +26,7 @@ public class ControllerDepartment extends Controller {
     public void initialize(){
         idDep.setCellValueFactory(cellData -> cellData.getValue().IDProperty().asObject());
         NameDep.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        deptable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> setDepId(newValue));
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO(connection);
             ObservableList<Department> list = FXCollections.observableArrayList();
@@ -35,6 +36,10 @@ public class ControllerDepartment extends Controller {
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    private void setDepId(Department newValue) {
+        Controller.department = newValue;
     }
 
     @FXML

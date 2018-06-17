@@ -20,13 +20,13 @@ public class EmployeeDAO extends DAO {
         Department department = new Department();
         employee.setId(result.getInt(ID_EMPLOYEE));
         employee.setName(result.getString(EMPL_NAME));
-        if (result.getDate(EMPL_BIRTHDAY) != null) employee.setBirthday(result.getDate(EMPL_BIRTHDAY));
+        employee.setBirthday(result.getDate(EMPL_BIRTHDAY));
         employee.setPosition(result.getString(EMPL_POS));
         employee.setDate(result.getDate(EMPL_DATE));
         employee.setSalary(result.getDouble(EMPL_SALARY));
-        if (result.getInt(ID_DEPARTMENT) != 0) department.setID(result.getInt(ID_DEPARTMENT));
-        if (result.getString(NAME_DEP) != null) department.setName(result.getString(NAME_DEP));
-        if ((result.getInt(ID_DEPARTMENT) != 0) && (result.getString(NAME_DEP) != null)) employee.setDepartment(department);
+        department.setID(result.getInt(ID_DEPARTMENT));
+        department.setName(result.getString(NAME_DEP));
+        employee.setDepartment(department);
         return employee;
     }
 
@@ -54,8 +54,8 @@ public class EmployeeDAO extends DAO {
 
     public ObservableList<Employee> selectAllEmployees() throws SQLException {
         String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
-                "FROM Employees,Department " +
-                "WHERE Employees.Department = Department.ID;";
+                "FROM Employees " +
+                "LEFT OUTER JOIN Department ON Employees.Department = Department.ID";
         statement = getConnection().createStatement();
         ResultSet result = statement.executeQuery(sql);
         ObservableList<Employee> list = FXCollections.observableArrayList();
@@ -78,8 +78,18 @@ public class EmployeeDAO extends DAO {
         return list;
     }
 
-    public void addEmployee (){
-        String sql = "";
+    public void addEmployee (String name,Date birthday,Date date,String position,Double salary,int idDep) throws SQLException {
+        String sql = "INSERT INTO Employees(Name, BirthDay, Date, Salary, Position, Department) " +
+                "VALUES(?,?,?,?,?,?)";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,name);
+        statement.setDate(2,birthday);
+        statement.setDate(3,date);
+        statement.setDouble(4,salary);
+        statement.setNString(5,position);
+        statement.setInt(6,idDep);
+        statement.executeUpdate();
+        statement.close();
     }
 
     public void DeleteEmployee(int index) throws SQLException {

@@ -3,6 +3,7 @@ package Controllers;
 import Connection.ConnectionDB;
 import Database.Custom;
 import Database.Customer;
+import Database.Department;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -24,6 +25,7 @@ public class Controller {
     public static int port = 3306;
     public static Customer customer;
     public static Custom custom;
+    public static Department department;
 
     public void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
