@@ -1,0 +1,7 @@
+ImageView {
+    -fx-cursor: hand;
+}
+
+ImageView:hover{
+    -fx-opacity: 0.5;
+}

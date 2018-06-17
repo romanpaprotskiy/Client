@@ -157,6 +157,23 @@ public class ControllerMain extends Controller{
         }
         primaryStage.setTitle("AddCustom");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
+    @FXML
+    public void EditClick(MouseEvent mouseEvent) {
+        if (Controller.custom == null) ShowAlert(new NullPointerException("Виберіть елемент"));
+        Controller.custom = customTable.getSelectionModel().getSelectedItem();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/Layouts/EditLayout.fxml"));
+        } catch (IOException e) {
+            ShowAlert(e);
+        }
+        primaryStage.setTitle("EditCustom");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 }

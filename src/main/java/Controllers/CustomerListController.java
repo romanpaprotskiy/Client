@@ -1,18 +1,21 @@
 package Controllers;
 
 import DAO.CustomerDAO;
-import Database.*;
+import Database.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
-public class CustomerListController extends ControllerAddCustom {
+public class CustomerListController extends Controller {
 
     @FXML
     public ImageView add;
@@ -27,7 +30,8 @@ public class CustomerListController extends ControllerAddCustom {
     @FXML
     public TableColumn<Customer,String> Addr;
 
-    public void initialize(){
+
+    public void initialize() {
         idCus.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         Cus.setCellValueFactory(cellData -> cellData.getValue().person_customerProperty());
         Rep.setCellValueFactory(cellData -> cellData.getValue().person_representativeProperty());
@@ -41,12 +45,11 @@ public class CustomerListController extends ControllerAddCustom {
             ShowAlert(e);
             e.printStackTrace();
         }
-        customerListTable.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> getCustomerId(newValue)));
+        customerListTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getCustomer(newValue));
     }
 
-    private void getCustomerId(Customer customer) {
-        Controller.customer = customerListTable.getSelectionModel().getSelectedItem();
-        CustomerText.setText(customerListTable.getSelectionModel().getSelectedItem().getPerson_customer());
+    private void getCustomer(Customer customer) {
+        Controller.customer = customer;
     }
 
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="462.0" prefWidth="458.0" stylesheets="/Styles/Add.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerAddCustom">
+<AnchorPane prefHeight="350.0" prefWidth="417.0" stylesheets="/Styles/Add.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerAddCustom">
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="473.0" style="-fx-background-color: #3b66aa;">
          <children>
@@ -22,26 +22,18 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <GridPane layoutX="54.0" layoutY="94.0" prefHeight="316.0" prefWidth="365.0">
+      <GridPane layoutX="54.0" layoutY="94.0" prefHeight="228.0" prefWidth="365.0">
          <children>
             <Label prefHeight="41.0" prefWidth="215.0" text="Тип замовлення" />
             <Label prefHeight="41.0" prefWidth="215.0" text="Кількість запитань" GridPane.rowIndex="1" />
             <Label prefHeight="41.0" prefWidth="215.0" text="Дата замовлення" GridPane.rowIndex="2" />
-            <Label prefHeight="38.0" prefWidth="222.0" text="Дата виконання " GridPane.rowIndex="3" />
-            <Label prefHeight="41.0" prefWidth="215.0" text="Затверджено бухгалтером" GridPane.rowIndex="4" />
-            <Label prefHeight="41.0" prefWidth="215.0" text="Затверджено директором" GridPane.rowIndex="5" />
-            <Label prefHeight="41.0" prefWidth="215.0" text="Працівник" GridPane.rowIndex="7" />
-            <Label prefHeight="41.0" prefWidth="215.0" text="Замовник" GridPane.rowIndex="8" />
+            <Label prefHeight="41.0" prefWidth="215.0" text="Працівник" GridPane.rowIndex="3" />
+            <Label prefHeight="41.0" prefWidth="215.0" text="Замовник" GridPane.rowIndex="4" />
             <ComboBox fx:id="typeCustom" prefWidth="150.0" GridPane.columnIndex="1" />
             <TextField fx:id="Quest" prefHeight="25.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <DatePicker fx:id="DateCus" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <DatePicker fx:id="DateExe" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <DatePicker fx:id="AppAcc" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <DatePicker fx:id="AppDir" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="Employee" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label text="Вартість" GridPane.rowIndex="6" />
-            <TextField fx:id="price" prefHeight="25.0" prefWidth="96.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextField fx:id="CustomerText" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <ComboBox fx:id="Employee" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="CustomerText" onMouseMoved="#CustomMove" prefHeight="103.0" prefWidth="175.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="168.0" />
@@ -53,13 +45,9 @@
             <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
       </GridPane>
-      <ImageView fx:id="Calc" fitHeight="34.0" fitWidth="40.0" layoutX="419.0" layoutY="376.0" onMouseClicked="#CusClick" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Calc" fitHeight="34.0" fitWidth="40.0" layoutX="419.0" layoutY="277.0" onMouseClicked="#CusClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Icons/calc.png" />
          </image>

@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class ControllerAddCustom extends Controller {
@@ -35,52 +36,31 @@ public class ControllerAddCustom extends Controller {
     @FXML
     public DatePicker DateCus;
     @FXML
-    public DatePicker DateExe;
-    @FXML
-    public DatePicker AppAcc;
-    @FXML
-    public DatePicker AppDir;
-    @FXML
     public ComboBox<Employee> Employee;
     @FXML
-    public TextField price;
-    @FXML
-    public TextField CustomerText;
+    public Label CustomerText;
 
     private ObservableList<String> listType = FXCollections.observableArrayList("усне", "письмове", "економічно-правове", "забезпечення", "семінар", "аудит");
     private ObservableList<Employee> cell;
+    private int customerId;
 
     @FXML
     public void initialize() {
-        Employee.setCellFactory(new Callback<ListView<Employee>, ListCell<Employee>>() {
+        Callback<ListView<Employee>, ListCell<Employee>> factory = lv -> new ListCell<Employee>() {
 
             @Override
-            public ListCell<Employee> call(ListView<Employee> p) {
-
-                final ListCell<Employee> cell = new ListCell<Employee>() {
-
-                    @Override
-                    protected void updateItem(Employee t, boolean bln) {
-                        super.updateItem(t, bln);
-
-                        if (t != null) {
-                            setText(t.getId() + ":" + t.getName());
-                        } else {
-                            setText(null);
-                        }
-                    }
-
-                };
-
-                return cell;
+            protected void updateItem(Employee item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : item.getName());
             }
-        });
+
+        };
+        Employee.setCellFactory(factory);
+        Employee.setButtonCell(factory.call(null));
         typeCustom.setItems(listType);
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO(Controller.connection);
-            CustomerDAO customerDAO = new CustomerDAO(Controller.connection);
             ObservableList<Employee> list = FXCollections.observableArrayList(employeeDAO.selectAllNameEmployees());
-            ObservableList<Customer> list1 = FXCollections.observableArrayList(customerDAO.selectAllNameCustomer());
             Employee.setItems(list);
         } catch (SQLException e) {
             ShowAlert(e);
@@ -100,9 +80,19 @@ public class ControllerAddCustom extends Controller {
     @FXML
     public void AddCustomClick(MouseEvent mouseEvent) {
         try {
-            CustomDAO customDAO = new CustomDAO(connection);
-
-        } catch (SQLException e) {
+            if (typeCustom.getValue() != null && Quest.getText() != null && DateCus.getValue() != null && Employee.getValue() != null
+                    && Controller.customer != null) {
+                CustomDAO customDAO = new CustomDAO(connection);
+                String type = typeCustom.getValue();
+                int quest = Integer.parseInt(Quest.getText());
+                Date dateCus = Date.valueOf(DateCus.getValue());
+                int empId = Employee.getValue().getId();
+                int cusId = Controller.customer.getId();
+                customDAO.addCustom(type, quest, dateCus, empId, cusId);
+            } else {
+                ShowAlert(new NullPointerException("Введіть всі поля"));
+            }
+        } catch (SQLException | NullPointerException e) {
             ShowAlert(e);
             e.printStackTrace();
         }
@@ -115,11 +105,18 @@ public class ControllerAddCustom extends Controller {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("SelectCustomer");
+            stage.setResizable(false);
             stage.show();
+            tempStage = stage;
         } catch (IOException e) {
             ShowAlert(e);
             e.printStackTrace();
         }
     }
 
+    @FXML
+    public void CustomMove(MouseEvent mouseEvent) {
+        CustomerText.setText(Controller.customer.getPerson_customer());
+        customerId = Controller.customer.getId();
+    }
 }

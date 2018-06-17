@@ -1,6 +1,6 @@
 package Controllers;
 
-import Database.Customer;
+import Database.*;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
@@ -18,11 +18,12 @@ public  class Controller {
     public static String host = "localhost";
     public static int port = 3306;
     public static Customer customer;
+    public static Custom custom;
 
     public void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("Error in " + e.getMessage());
+        alert.setHeaderText("Error: " + e.getMessage());
         alert.setContentText("Error" + e);
         alert.showAndWait();
     }

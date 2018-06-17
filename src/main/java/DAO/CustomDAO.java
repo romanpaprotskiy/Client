@@ -62,14 +62,15 @@ public class CustomDAO extends DAO {
         statement.close();
     }
 
-    public void addCustom(String type,int count,Date date,Employee employee,Customer customer) throws SQLException {
+    public void addCustom(String type,int count,Date date,int employee,int customer) throws SQLException {
         String sql = "INSERT INTO Custom(Type, CountOfQuestions, date_custom, Employee, Customer)" +
-                "VALUES (?,?,?,?,?,?);";
+                "VALUES (?,?,?,?,?);";
         PreparedStatement preparedStatement = getConnection().prepareStatement(sql);
         preparedStatement.setNString(1,type);
         preparedStatement.setInt(2,count);
-        preparedStatement.setDate(3,date_custom);
-        preparedStatement.setInt(4,employee.getId());
-        preparedStatement.setInt(5,customer.getId());
+        preparedStatement.setDate(3,date);
+        preparedStatement.setInt(4,employee);
+        preparedStatement.setInt(5,customer);
+        preparedStatement.executeUpdate();
     }
 }

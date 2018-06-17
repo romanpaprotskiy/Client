@@ -86,7 +86,7 @@
                   <Image url="@../Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="edit" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="edit" onMouseClicked="#EditClick" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/edit.png" />
                </image>
