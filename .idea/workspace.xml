@@ -2,30 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0019b7bc-c2ae-44b5-b8c8-1d785bb39225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Styles/CustomList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddCustom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CustomerListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/CustomerListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/AddCustom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/AddCustom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/CustomerList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/CustomerList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddCustom$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddCustom$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddCustom$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddCustom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEdit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/CustomerListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/CustomerListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Layouts/AddCustom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layouts/AddCustom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Layouts/CustomerList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layouts/CustomerList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Layouts/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Layouts/MainLayout.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -104,64 +94,39 @@
       <file leaf-file-name="ControllerMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+            <state relative-caret-position="402">
+              <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3803#3804#0" expanded="true" />
+                <element signature="e#3828#3829#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerEdit.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java">
+      <file leaf-file-name="ControllerEmployee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="290">
+              <caret line="75" column="44" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2271#2272#0" expanded="true" />
+                <element signature="e#2296#2297#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="EmployeeDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainLayout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="88" column="60" lean-forward="true" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+            <state relative-caret-position="244">
+              <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -169,8 +134,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -178,11 +143,62 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CustomDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="EditLayout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="MainLayout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="83" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="360">
+              <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -192,11 +208,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>selectAllEmployees</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -204,8 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/OptionsLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/test/java/test1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Database/TypeCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/RMI.java" />
         <option value="$PROJECT_DIR$/src/main/java/RMI/CustomInterface.java" />
@@ -237,9 +256,7 @@
         <option value="$PROJECT_DIR$/src/main/java/DAO/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/Database/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerAdd.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/Database/Customer.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/CustomListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Layouts/AddCustom.fxml" />
@@ -248,13 +265,17 @@
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/CustomerListController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" />
       </list>
     </option>
   </component>
@@ -302,7 +323,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -373,14 +394,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -401,8 +414,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -536,7 +549,8 @@
       <workItem from="1529132008553" duration="32764000" />
       <workItem from="1529178313018" duration="5198000" />
       <workItem from="1529220917857" duration="8303000" />
-      <workItem from="1529229800214" duration="6035000" />
+      <workItem from="1529229800214" duration="6084000" />
+      <workItem from="1529238038134" duration="9698000" />
     </task>
     <servers />
   </component>
@@ -555,7 +569,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174860000" />
+    <option name="totallyTimeSpent" value="184607000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -577,15 +591,17 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32982844" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.14222468" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
       <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.329718" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15716657" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15882678" />
       <window_info anchor="right" id="Database" order="3" weight="0.14222468" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24958494" />
       <window_info id="UI Designer" order="2" />
@@ -597,8 +613,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,45 +631,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerCalc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2ca4dc34-adbf-4ea8-9d02-1178dd5037e2/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/JDK/lib/src.zip!/java.base/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619">
-          <caret line="925" column="62" lean-forward="true" selection-start-line="925" selection-start-column="62" selection-end-line="925" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/JDK/lib/src.zip!/java.base/java/text/DateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="367" column="65" lean-forward="true" selection-start-line="367" selection-start-column="65" selection-end-line="367" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/CalcPrice.fxml" />
     <entry file="jar://$USER_HOME$/JDK/lib/src.zip!/java.base/java/time/temporal/TemporalQuery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="733">
@@ -773,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="113" selection-start-line="14" selection-start-column="113" selection-end-line="14" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Database/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -816,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Styles/Main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Database/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -835,23 +796,6 @@
             <element signature="e#1513#1514#0" expanded="true" />
             <element signature="e#1554#1555#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -877,12 +821,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/LoginLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -913,18 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerAddCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="92" column="72" lean-forward="true" selection-start-line="92" selection-start-column="72" selection-end-line="92" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1450#1695#0" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/CustomerListController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -938,32 +870,128 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/AddCustom.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/CustomerList.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerAddCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/JDK/lib/src.zip!/javafx.graphics/com/sun/glass/ui/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="555" selection-start-line="555" selection-end-line="555" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/JDK/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="1786" selection-start-line="1786" selection-end-line="1786" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/Controllers/ControllerEdit.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/Controllers/ControllerMain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="206" column="51" lean-forward="true" selection-start-line="206" selection-start-column="51" selection-end-line="206" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#7036#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Styles/Main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state relative-caret-position="222">
+          <caret line="37" column="45" lean-forward="true" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="83" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="113" selection-start-line="14" selection-start-column="113" selection-end-line="14" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -972,44 +1000,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+        <state relative-caret-position="636">
+          <caret line="88" column="56" lean-forward="true" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="88" column="60" lean-forward="true" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="176" column="28" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="28" />
+        <state relative-caret-position="402">
+          <caret line="167" column="33" lean-forward="true" selection-start-line="167" selection-start-column="33" selection-end-line="167" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3803#3804#0" expanded="true" />
+            <element signature="e#3828#3829#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/EditLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        <state relative-caret-position="290">
+          <caret line="75" column="44" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2296#2297#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="244">
+          <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

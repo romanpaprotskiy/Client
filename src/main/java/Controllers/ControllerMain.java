@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 
 public class ControllerMain extends Controller{
@@ -117,12 +118,7 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void ExitApp(MouseEvent mouseEvent) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Exit");
-        alert.setHeaderText("Підтвердіть дію");
-        alert.setContentText("Ви дійсно хочете вийти?");
-        alert.showAndWait();
-        if (alert.getResult() == ButtonType.OK) primaryStage.close();
+        ExitWin();
     }
 
     @FXML
@@ -163,17 +159,30 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void EditClick(MouseEvent mouseEvent) {
-        if (Controller.custom == null) ShowAlert(new NullPointerException("Виберіть елемент"));
-        Controller.custom = customTable.getSelectionModel().getSelectedItem();
-        Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/Layouts/EditLayout.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/EditLayout.fxml"));
+            primaryStage.setTitle("Edit");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setResizable(false);
+            primaryStage.show();
         } catch (IOException e) {
             ShowAlert(e);
+            e.printStackTrace();
         }
-        primaryStage.setTitle("EditCustom");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
-        primaryStage.show();
+    }
+
+    @FXML
+    public void EmployeeClick(MouseEvent mouseEvent) {
+        scene1 = primaryStage.getScene();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/Employee.fxml"));
+            primaryStage.setTitle("Main");
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setResizable(false);
+            primaryStage.show();
+        } catch (IOException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
     }
 }

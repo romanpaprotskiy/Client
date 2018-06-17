@@ -32,14 +32,14 @@
         </GridPane>
         <AnchorPane prefHeight="65.0" prefWidth="485.0" style="-fx-background-color: #3b66aa;">
             <children>
-                <ImageView fitHeight="39.0" fitWidth="61.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fx:id="Back" fitHeight="39.0" fitWidth="61.0" layoutX="8.0" layoutY="13.0"
+                           onMouseClicked="#BackClick" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Icons/back.png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="39.0" fitWidth="61.0" layoutX="411.0" layoutY="15.0" pickOnBounds="true"
-                           preserveRatio="true">
+                <ImageView fx:id="Save" fitHeight="39.0" fitWidth="61.0" layoutX="411.0" layoutY="15.0"
+                           pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Icons/save.png"/>
                     </image>

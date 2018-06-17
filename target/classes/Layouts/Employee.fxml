@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="477.0" prefWidth="726.0" stylesheets="@../Styles/Main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerEmployee">
+    <children>
+        <TableView fx:id="EmployeeTable" layoutX="-2.0" layoutY="95.0" prefHeight="196.0" prefWidth="733.0">
+            <columns>
+                <TableColumn fx:id="idEmpl" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="EmpName" prefWidth="75.0" text="ПІБ" />
+                <TableColumn fx:id="BDate" prefWidth="75.0" text="Дата народження" />
+                <TableColumn fx:id="DateV" prefWidth="75.0" text="Дата виходу" />
+                <TableColumn fx:id="Pos" prefWidth="75.0" text="Посада" />
+                <TableColumn fx:id="Dep" prefWidth="75.0" text="Відділ" />
+                <TableColumn fx:id="Sel" prefWidth="75.0" text="Зарплата" />
+            </columns>
+        </TableView>
+        <TableView fx:id="CustomTable" layoutY="291.0" prefHeight="186.0" prefWidth="323.0">
+            <columns>
+                <TableColumn fx:id="idCus" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="Type" prefWidth="75.0" text="Тип" />
+                <TableColumn fx:id="DateCus" prefWidth="75.0" text="Дата замовлення" />
+                <TableColumn fx:id="DateExe" prefWidth="97.0" text="Дата виконання" />
+            </columns>
+        </TableView>
+        <ImageView fx:id="delete" fitHeight="37.0" fitWidth="42.0" layoutX="540.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/delete.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="edit" fitHeight="37.0" fitWidth="37.0" layoutX="590.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/edit.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="add" fitHeight="37.0" fitWidth="37.0" layoutX="640.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/add.png" />
+            </image>
+        </ImageView>
+        <ComboBox layoutX="330.0" layoutY="332.0" prefWidth="150.0" />
+        <TextField layoutX="330.0" layoutY="301.0" prefHeight="25.0" prefWidth="150.0" />
+        <ImageView fx:id="search" fitHeight="37.0" fitWidth="37.0" layoutX="492.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/search.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="update" fitHeight="37.0" fitWidth="37.0" layoutX="330.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../Icons/update.png" />
+            </image>
+        </ImageView>
+      <AnchorPane fx:id="top" prefHeight="95.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
+         <children>
+            <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/Customers.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/Employees.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/statistics.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="customs" fitHeight="54.0" fitWidth="54.0" layoutX="14.0" layoutY="26.0" onMouseClicked="#CustomClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/order.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="680.0" layoutY="34.0" onMouseClicked="#ExitApp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/exit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

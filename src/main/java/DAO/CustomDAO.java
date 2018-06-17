@@ -37,6 +37,15 @@ public class CustomDAO extends DAO {
         return custom;
     }
 
+    private Custom getCustomEmployeeFromResyltSet(ResultSet result) throws SQLException {
+        Custom custom = new Custom();
+        custom.setId(result.getInt(ID_CUSTOM));
+        custom.setType(result.getString(TYPE));
+        custom.setDate_custom(result.getDate(DATE_CUSTOM));
+        custom.setDateOfExecution(result.getDate(DATE_EXC));
+        return custom;
+    }
+
     //return all fields from the table "Custom"
     public ObservableList<Custom> selectAllCustom() throws SQLException {
         statement = getConnection().createStatement();
@@ -72,5 +81,18 @@ public class CustomDAO extends DAO {
         preparedStatement.setInt(4,employee);
         preparedStatement.setInt(5,customer);
         preparedStatement.executeUpdate();
+    }
+
+    public ObservableList<Custom> getCustomEmployee(int idEmployee) throws SQLException {
+        String sql = "SELECT id_custom,Type,date_custom,dateOfExecution " +
+                "FROM Custom " +
+                "WHERE Employee = " +  idEmployee + ";";
+        statement = getConnection().createStatement();
+        ResultSet result = statement.executeQuery(sql);
+        ObservableList<Custom> list = FXCollections.observableArrayList();
+        while (result.next()) {
+            list.add(getCustomEmployeeFromResyltSet(result));
+        }
+        return list;
     }
 }

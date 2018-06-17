@@ -53,7 +53,7 @@ public class EmployeeDAO extends DAO {
     }
 
     public ObservableList<Employee> selectAllEmployees() throws SQLException {
-        String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep AS Department " +
+        String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
                 "FROM Employees,Department " +
                 "WHERE Employees.Department = Department.ID;";
         statement = getConnection().createStatement();
@@ -77,4 +77,5 @@ public class EmployeeDAO extends DAO {
         statement.close();
         return list;
     }
+
 }

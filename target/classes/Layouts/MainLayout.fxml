@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-
 <AnchorPane prefHeight="473.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMain">
     <children>
         <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
@@ -18,7 +12,7 @@
                        <Image url="@../Icons/Customers.png" />
                    </image>
                </ImageView>
-               <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="employees" onMouseClicked="#EmployeeClick" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../Icons/Employees.png" />
                    </image>
@@ -86,7 +80,7 @@
                   <Image url="@../Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="edit" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="edit" onMouseClicked="#EditClick" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/edit.png" />
                </image>
