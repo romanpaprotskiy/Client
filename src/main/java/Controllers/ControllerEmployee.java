@@ -62,6 +62,8 @@ public class ControllerEmployee extends Controller {
     @FXML
     public TextField searchField;
 
+    private EmployeeDAO employeeDAO;
+
     @FXML
     public void initialize(){
         idEmpl.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
@@ -79,6 +81,8 @@ public class ControllerEmployee extends Controller {
             getCustom(newValue);
             getEmployee(newValue);
         });
+        ObservableList<String> list1 = FXCollections.observableArrayList("ID","ПІБ","Посада","Відділ");
+        typeSearch.setItems(list1);
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO(connection);
             ObservableList<Employee> list = FXCollections.observableArrayList();
@@ -175,6 +179,32 @@ public class ControllerEmployee extends Controller {
 
     @FXML
     public void Search(MouseEvent mouseEvent) {
-
+        try {
+            switch (typeSearch.getValue()) {
+                case "ID":
+                    ObservableList<Employee> list = FXCollections.observableArrayList();
+                    list.addAll(employeeDAO.searchID(Integer.parseInt(searchField.getText())));
+                    EmployeeTable.setItems(list);
+                    break;
+                case "ПІБ":
+                    ObservableList<Employee> list1 = FXCollections.observableArrayList();
+                    list1.addAll(employeeDAO.searchName(searchField.getText()));
+                    EmployeeTable.setItems(list1);
+                    break;
+                case "Посада":
+                    ObservableList<Employee> list2 = FXCollections.observableArrayList();
+                    list2.addAll(employeeDAO.searchPos(searchField.getText()));
+                    EmployeeTable.setItems(list2);
+                    break;
+                case "Відділ":
+                    ObservableList<Employee> list3 = FXCollections.observableArrayList();
+                    list3.addAll(employeeDAO.searchDep(searchField.getText()));
+                    EmployeeTable.setItems(list3);
+                    break;
+            }
+        } catch (SQLException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
     }
 }

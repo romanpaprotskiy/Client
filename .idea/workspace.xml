@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0019b7bc-c2ae-44b5-b8c8-1d785bb39225" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEditEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Layouts/EditEmployee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEdit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/EditWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/EditWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerAddEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/ControllerEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/ControllerEdit.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,8 +82,8 @@
       <file leaf-file-name="ControllerMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="187" column="45" lean-forward="true" selection-start-line="187" selection-start-column="45" selection-end-line="187" selection-end-column="45" />
+            <state relative-caret-position="456">
+              <caret line="198" column="44" lean-forward="true" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3803#3804#0" expanded="true" />
@@ -120,6 +105,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EmployeeDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2640">
+              <caret line="57" column="85" lean-forward="true" selection-start-line="57" selection-start-column="85" selection-end-line="57" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainLayout.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/MainLayout.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -130,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerEmployee.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControllerEmployee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2166">
-              <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
+            <state relative-caret-position="330">
+              <caret line="186" column="49" lean-forward="true" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3258#3259#0" expanded="true" />
@@ -216,7 +210,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/Layouts/AddEmployee.fxml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3d2c9d94-ae5a-4807-94c3-b0bf5319fc39/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerAddEmployee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Layouts/EditEmployee.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerEditEmployee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/Controller.java" />
@@ -227,6 +220,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java" />
       </list>
     </option>
   </component>
@@ -494,7 +488,7 @@
       <workItem from="1529220917857" duration="8303000" />
       <workItem from="1529229800214" duration="6084000" />
       <workItem from="1529238038134" duration="23645000" />
-      <workItem from="1529330172378" duration="14904000" />
+      <workItem from="1529330172378" duration="16450000" />
     </task>
     <servers />
   </component>
@@ -513,7 +507,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213458000" />
+    <option name="totallyTimeSpent" value="215004000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -545,6 +539,7 @@
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.160487" />
       <window_info anchor="right" id="Database" order="3" weight="0.14222468" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24958494" />
       <window_info id="UI Designer" order="2" />
@@ -556,7 +551,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +561,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="34" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -867,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="179" column="32" lean-forward="true" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/EditEmployee.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -942,6 +929,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/CustomDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -954,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="187" column="45" lean-forward="true" selection-start-line="187" selection-start-column="45" selection-end-line="187" selection-end-column="45" />
+        <state relative-caret-position="456">
+          <caret line="198" column="44" lean-forward="true" selection-start-line="198" selection-start-column="44" selection-end-line="198" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3803#3804#0" expanded="true" />
@@ -964,23 +959,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Layouts/Employee.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/ControllerEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="175" column="9" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
+        <state relative-caret-position="330">
+          <caret line="186" column="49" lean-forward="true" selection-start-line="186" selection-start-column="49" selection-end-line="186" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3258#3259#0" expanded="true" />
             <element signature="e#3304#3305#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/EmployeeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2640">
+          <caret line="57" column="85" lean-forward="true" selection-start-line="57" selection-start-column="85" selection-end-line="57" selection-end-column="85" />
         </state>
       </provider>
     </entry>
