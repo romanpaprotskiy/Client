@@ -129,4 +129,58 @@ public class EmployeeDAO extends DAO {
         statement.close();
     }
 
+    public void EditEmployeeName(int id,String name) throws SQLException{
+        String sql = "UPDATE Employees SET Name = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,name);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void EditEmployeeBirthday(int id,Date date) throws SQLException{
+        String sql = "UPDATE Employees SET BirthDay = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,date);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void EditEmployeeDate(int id,Date date) throws SQLException{
+        String sql = "UPDATE Employees SET Date = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,date);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void EditEmployeePosition(int id,String pos) throws SQLException{
+        String sql = "UPDATE Employees SET Position = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,pos);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void EditEmployeeSalary(int id,Double salary) throws SQLException{
+        String sql = "UPDATE Employees SET Salary = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDouble(1,salary);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void EditEmployeeDepartment(int id,int dep) throws SQLException{
+        String sql = "UPDATE Employees SET Department = ? WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setInt(1,dep);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
 }

@@ -32,7 +32,7 @@
                 <Image url="@../Icons/delete.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="edit" fitHeight="37.0" fitWidth="37.0" layoutX="590.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="edit" onMouseClicked="#EditEmpl" fitHeight="37.0" fitWidth="37.0" layoutX="590.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Icons/edit.png" />
             </image>

@@ -4,12 +4,14 @@ import Connection.ConnectionDB;
 import Database.Custom;
 import Database.Customer;
 import Database.Department;
+import Database.Employee;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
-public class Controller {
+public abstract class Controller {
+
     public static Scene scene;
     public static Scene scene1;
     public static Scene scene2;
@@ -26,6 +28,7 @@ public class Controller {
     public static Customer customer;
     public static Custom custom;
     public static Department department;
+    public static Employee employee;
 
     public void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

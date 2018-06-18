@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+
 <AnchorPane prefHeight="473.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMain">
     <children>
         <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
@@ -12,7 +14,7 @@
                        <Image url="@../Icons/Customers.png" />
                    </image>
                </ImageView>
-               <ImageView fx:id="employees" onMouseClicked="#EmployeeClick" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" onMouseClicked="#EmployeeClick" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../Icons/Employees.png" />
                    </image>
@@ -80,7 +82,7 @@
                   <Image url="@../Icons/add.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="edit" onMouseClicked="#EditClick" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="edit" fitHeight="39.0" fitWidth="39.0" layoutX="596.0" layoutY="206.0" onMouseClicked="#EditClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/edit.png" />
                </image>
@@ -90,8 +92,8 @@
                   <Image url="@../Icons/delete.png" />
                </image>
             </ImageView>
-            <TextField layoutX="312.0" layoutY="215.0" prefHeight="15.0" prefWidth="149.0" />
-            <ImageView fx:id="search" fitHeight="33.0" fitWidth="33.0" layoutX="472.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="searchField" layoutX="312.0" layoutY="215.0" prefHeight="15.0" prefWidth="149.0" />
+            <ImageView fx:id="search" fitHeight="33.0" fitWidth="33.0" layoutX="472.0" layoutY="218.0" onMouseClicked="#Search" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/search.png" />
                </image>

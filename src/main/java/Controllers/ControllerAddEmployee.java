@@ -32,7 +32,6 @@ public class ControllerAddEmployee extends Controller {
 
     @FXML
     public void Back(MouseEvent mouseEvent) {
-        primaryStage.close();
         primaryStage.setTitle("Main");
         primaryStage.setResizable(false);
         primaryStage.setScene(scene3);
@@ -56,14 +55,22 @@ public class ControllerAddEmployee extends Controller {
 
     @FXML
     public void addEmpl(MouseEvent mouseEvent) {
+        String strn,p;
+        Date bdate,vdate;
+        Double s;
+        int iddep;
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO(connection);
-            String strn = name.getText();
-            Date bdate = Date.valueOf(birthday.getValue());
-            Date vdate = Date.valueOf(dateV.getValue());
-            String p = pos.getText();
-            Double s = Double.valueOf(sel.getText());
-            int iddep = department.getID();
+            if (name.getText() != null) strn = name.getText();
+            else strn = null;
+            if (birthday.getValue() != null) bdate = Date.valueOf(birthday.getValue());
+            else bdate = null;
+            if (dateV.getValue() != null) vdate = Date.valueOf(dateV.getValue());
+            else vdate = null;
+            if (pos.getText() != null) p = pos.getText();
+            else p = null;
+            s = Double.valueOf(sel.getText());
+            iddep = department.getID();
             employeeDAO.addEmployee(strn,bdate,vdate,p,s,iddep);
         } catch (SQLException e) {
             ShowAlert(e);

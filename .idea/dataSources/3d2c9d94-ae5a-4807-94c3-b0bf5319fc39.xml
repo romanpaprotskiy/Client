@@ -1006,7 +1006,6 @@
     <column id="250" parent="230" name="person_customer">
       <Position>2</Position>
       <DataType>varchar(60)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
@@ -1056,7 +1055,6 @@
     <column id="258" parent="232" name="Name">
       <Position>2</Position>
       <DataType>varchar(60)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>

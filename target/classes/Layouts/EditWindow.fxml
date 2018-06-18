@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="/Styles/Add.css" fx:controller="Controllers.ControllerEdit">
+<AnchorPane prefHeight="400.0" prefWidth="504.0" stylesheets="/Styles/Add.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerEdit">
    <children>
       <GridPane layoutX="84.0" layoutY="136.0" prefHeight="193.0" prefWidth="365.0">
          <children>
@@ -34,17 +33,37 @@
       </GridPane>
       <AnchorPane prefHeight="98.0" prefWidth="504.0" style="-fx-background-color: #3b66aa;">
          <children>
-            <ImageView fx:id="Back" onMouseClicked="#BackClick" fitHeight="51.0" fitWidth="59.0" layoutX="21.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Back" fitHeight="51.0" fitWidth="59.0" layoutX="21.0" layoutY="24.0" onMouseClicked="#BackClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/back.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="Save" onMouseClicked="#SaveClick" fitHeight="51.0" fitWidth="51.0" layoutX="439.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Save" fitHeight="51.0" fitWidth="51.0" layoutX="439.0" layoutY="24.0" onMouseClicked="#SaveClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/save.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
+      <ImageView fx:id="updateDateExe" onMouseClicked="#updDateExe" fitHeight="25.0" fitWidth="24.0" layoutX="449.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/plus.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="updateDateAppAcc" onMouseClicked="#updAppAcc" fitHeight="25.0" fitWidth="24.0" layoutX="449.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/plus.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="updateDateAppDir" onMouseClicked="#updAppDir" fitHeight="25.0" fitWidth="24.0" layoutX="449.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/plus.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="updatePrice" onMouseClicked="#updPr" fitHeight="25.0" fitWidth="24.0" layoutX="449.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Icons/plus.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

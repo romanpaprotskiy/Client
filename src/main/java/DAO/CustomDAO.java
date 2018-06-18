@@ -120,12 +120,92 @@ public class CustomDAO extends DAO {
         statement.close();
     }
 
+    public void editCustomDateExe(int id,Date dateofExc) throws SQLException {
+        String sql = "UPDATE Custom " +
+                "SET dateOfExecution = ? " +
+                "WHERE id_custom = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,dateofExc);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void editCustomAppAcc(int id,Date appAcc) throws SQLException {
+        String sql = "UPDATE Custom " +
+                "SET ApprovedAccoutant = ? " +
+                "WHERE id_custom = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,appAcc);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void editCustomAppDir(int id,Date appDir) throws SQLException {
+        String sql = "UPDATE Custom " +
+                "SET ApprovedDirector = ? " +
+                "WHERE id_custom = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDate(1,appDir);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void editCustomPrice(int id,Double price) throws SQLException {
+        String sql = "UPDATE Custom " +
+                "SET Price = ? " +
+                "WHERE id_custom = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setDouble(1,price);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
     public Custom getCustomForEdit(int id) throws SQLException {
         String sql = "SELECT dateOfExecution,ApprovedAccoutant,ApprovedDirector,Price " +
                 "FROM Custom  " +
                 "WHERE id_custom = " + id + ";";
         statement = getConnection().createStatement();
         ResultSet result = statement.executeQuery(sql);
+        statement.close();
         return getCustomForEditFromResultSet(result);
+    }
+
+    public ObservableList<Custom> searchID(int id) throws SQLException {
+        String sql = "SELECT id_custom,Custom.Type,CountOfQuestions,date_custom,dateOfExecution,ApprovedAccoutant,ApprovedDirector,Price, " +
+                "  Employees.id AS idEmployee,Employees.Name,Employees.Position,Customer.id AS idCustomer," +
+                " Customer.person_customer,Customer.person_representative,Customer.Address " +
+                "FROM Custom " +
+                "LEFT OUTER JOIN Employees ON Custom.Employee = Employees.id " +
+                "LEFT OUTER JOIN Customer  ON Custom.Customer = Customer.id WHERE id_custom = " + id + ";";
+        statement = getConnection().createStatement();
+        ResultSet result = statement.executeQuery(sql);
+        ObservableList<Custom> list = FXCollections.observableArrayList();
+        while (result.next()){
+            list.add(getCustomFromResultSet(result));
+        }
+        statement.close();
+        return list;
+    }
+
+    public ObservableList<Custom> searchType(String type) throws SQLException {
+        String sql = "SELECT id_custom,Custom.Type,CountOfQuestions,date_custom,dateOfExecution,ApprovedAccoutant,ApprovedDirector,Price, " +
+                "  Employees.id AS idEmployee,Employees.Name,Employees.Position,Customer.id AS idCustomer," +
+                " Customer.person_customer,Customer.person_representative,Customer.Address " +
+                "FROM Custom " +
+                "LEFT OUTER JOIN Employees ON Custom.Employee = Employees.id " +
+                "LEFT OUTER JOIN Customer  ON Custom.Customer = Customer.id WHERE Type = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,type);
+        ResultSet result = statement.executeQuery();
+        ObservableList<Custom> list = FXCollections.observableArrayList();
+        while (result.next()){
+            list.add(getCustomFromResultSet(result));
+        }
+        statement.close();
+        return list;
     }
 }

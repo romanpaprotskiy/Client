@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -60,6 +57,10 @@ public class ControllerEmployee extends Controller {
     public TableColumn<Custom,Date> DateExe;
     @FXML
     public ImageView customs;
+    @FXML
+    public ComboBox<String> typeSearch;
+    @FXML
+    public TextField searchField;
 
     @FXML
     public void initialize(){
@@ -74,7 +75,10 @@ public class ControllerEmployee extends Controller {
         Type.setCellValueFactory(cellData -> cellData.getValue().typeProperty());
         DateCus.setCellValueFactory(cellData -> cellData.getValue().date_customProperty());
         DateExe.setCellValueFactory(cellData -> cellData.getValue().dateOfExecutionProperty());
-        EmployeeTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getCustom(newValue));
+        EmployeeTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            getCustom(newValue);
+            getEmployee(newValue);
+        });
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO(connection);
             ObservableList<Employee> list = FXCollections.observableArrayList();
@@ -84,6 +88,10 @@ public class ControllerEmployee extends Controller {
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    private void getEmployee(Employee employee) {
+        Controller.employee = employee;
     }
 
     private void getCustom(Employee employee) {
@@ -145,5 +153,28 @@ public class ControllerEmployee extends Controller {
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    public void EditEmpl(MouseEvent mouseEvent) {
+        int index = EmployeeTable.getSelectionModel().getSelectedIndex();
+        if (index < 0) ShowAlert(new NullPointerException("Виберіть поле для редагування"));
+        else {
+            scene4 = primaryStage.getScene();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/Layouts/EditEmployee.fxml"));
+                primaryStage.setTitle("Edit");
+                primaryStage.setResizable(false);
+                primaryStage.setScene(new Scene(root));
+                primaryStage.show();
+            } catch (IOException e) {
+                ShowAlert(e);
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    public void Search(MouseEvent mouseEvent) {
+
     }
 }
