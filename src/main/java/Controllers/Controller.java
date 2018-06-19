@@ -5,6 +5,8 @@ import Database.Custom;
 import Database.Customer;
 import Database.Department;
 import Database.Employee;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -13,9 +15,9 @@ import javafx.stage.Stage;
 public abstract class Controller {
 
     public static Scene scene;
-    public static Scene scene1;
-    public static Scene scene2;
-    public static Scene scene3;
+    public static Scene scene1;//customs
+    public static Scene scene2;//employee
+    public static Scene scene3;//customer
     public static Scene scene4;
     public static Stage primaryStage;
     public static Stage tempStage;
@@ -29,6 +31,7 @@ public abstract class Controller {
     public static Custom custom;
     public static Department department;
     public static Employee employee;
+    public static Customer customer1;
 
     public void ShowAlert(Exception e) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

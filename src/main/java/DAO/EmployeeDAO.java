@@ -185,8 +185,8 @@ public class EmployeeDAO extends DAO {
 
     public ObservableList<Employee> searchID(int id) throws SQLException {
         String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
-                "FROM Employees " +
-                "JOIN Department ON Employees.Department = Department.ID WHERE Employees.id = ?";
+                "FROM Employees,Department " +
+                "WHERE (Employees.id = ?) AND (Employees.Department = Department.ID) ";
         PreparedStatement statement = getConnection().prepareStatement(sql);
         statement.setInt(1,id);
         ResultSet result = statement.executeQuery();
@@ -201,9 +201,9 @@ public class EmployeeDAO extends DAO {
     public ObservableList<Employee> searchName(String name) throws SQLException {
         String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
                 "FROM Employees " +
-                "JOIN Department ON Employees.Department = Department.ID WHERE Name = ?";
+                "JOIN Department ON Employees.Department = Department.ID WHERE Name LIKE ?";
         PreparedStatement statement = getConnection().prepareStatement(sql);
-        statement.setNString(1,name);
+        statement.setNString(1,"%" + name + "%");
         ResultSet result = statement.executeQuery();
         ObservableList<Employee> list = FXCollections.observableArrayList();
         while (result.next()){
@@ -216,9 +216,9 @@ public class EmployeeDAO extends DAO {
     public ObservableList<Employee> searchPos(String pos) throws SQLException {
         String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
                 "FROM Employees " +
-                "JOIN Department ON Employees.Department = Department.ID WHERE Position = ?";
+                "JOIN Department ON Employees.Department = Department.ID WHERE Position LIKE ?";
         PreparedStatement statement = getConnection().prepareStatement(sql);
-        statement.setNString(1,pos);
+        statement.setNString(1,"%" + pos + "%");
         ResultSet result = statement.executeQuery();
         ObservableList<Employee> list = FXCollections.observableArrayList();
         while (result.next()){
@@ -231,9 +231,9 @@ public class EmployeeDAO extends DAO {
     public ObservableList<Employee> searchDep(String dep) throws SQLException {
         String sql = "SELECT Employees.id AS idEmployee,Name,BirthDay,Date,Salary,Position,Department.ID AS idDep,NameDep " +
                 "FROM Employees " +
-                "JOIN Department ON Employees.Department = Department.ID WHERE NameDep = ?";
+                "JOIN Department ON Employees.Department = Department.ID WHERE NameDep LIKE ?";
         PreparedStatement statement = getConnection().prepareStatement(sql);
-        statement.setNString(1,dep);
+        statement.setNString(1,"%" + dep + "%");
         ResultSet result = statement.executeQuery();
         ObservableList<Employee> list = FXCollections.observableArrayList();
         while (result.next()){

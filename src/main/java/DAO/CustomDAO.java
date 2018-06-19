@@ -74,6 +74,34 @@ public class CustomDAO extends DAO {
         return list;
     }
 
+    public ObservableList<Custom> selectAllCustomForCustomerTable(int id) throws SQLException {
+        ObservableList<Custom> list = FXCollections.observableArrayList();
+        String sql = "SELECT id_custom,Custom.Type,CountOfQuestions,date_custom,dateOfExecution, " +
+                "Customer.id AS idCustomer," +
+                " Customer.person_customer,Customer.person_representative,Customer.Address " +
+                "FROM Custom " +
+                "LEFT OUTER JOIN Customer  ON Custom.Customer = Customer.id WHERE Customer = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setInt(1,id);
+        ResultSet result = statement.executeQuery();
+        while (result.next()){
+            Custom custom = new Custom();
+            Customer customer = new Customer();
+            customer.setId(result.getInt(ID_CUSTOMER));
+            customer.setPerson_customer(result.getString(PER_CUS));
+            customer.setPerson_representative(result.getString(PER_REP));
+            custom.setId(result.getInt(ID_CUSTOM));
+            custom.setType(result.getString(TYPE));
+            custom.setCustomer(customer);
+            custom.setCountOfQuestions(result.getInt(COUNT_OF_QUEST));
+            custom.setDate_custom(result.getDate(DATE_CUSTOM));
+            custom.setDateOfExecution(result.getDate(DATE_EXC));
+            list.add(custom);
+        }
+        statement.close();
+        return list;
+    }
+
     public void DeleteCustom(int index) throws SQLException {
         statement = getConnection().createStatement();
         String sql = "DELETE FROM Custom WHERE id_custom = " + index;
@@ -197,9 +225,9 @@ public class CustomDAO extends DAO {
                 " Customer.person_customer,Customer.person_representative,Customer.Address " +
                 "FROM Custom " +
                 "LEFT OUTER JOIN Employees ON Custom.Employee = Employees.id " +
-                "LEFT OUTER JOIN Customer  ON Custom.Customer = Customer.id WHERE Type = ?";
+                "LEFT OUTER JOIN Customer  ON Custom.Customer = Customer.id WHERE Type LIKE ?";
         PreparedStatement statement = getConnection().prepareStatement(sql);
-        statement.setNString(1,type);
+        statement.setNString(1,"%" + type + "%");
         ResultSet result = statement.executeQuery();
         ObservableList<Custom> list = FXCollections.observableArrayList();
         while (result.next()){

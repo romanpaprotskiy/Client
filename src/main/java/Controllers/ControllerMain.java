@@ -77,6 +77,15 @@ public class ControllerMain extends Controller{
 
     @FXML
     private void initialize() {
+        try {
+            Parent root1 = FXMLLoader.load(getClass().getResource("/Layouts/Employee.fxml"));
+            Parent root2 = FXMLLoader.load(getClass().getResource("/Layouts/Customer.fxml"));
+            scene2 = new Scene(root1);
+            scene3 = new Scene(root2);
+        } catch (IOException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
         cId.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         cType.setCellValueFactory(cellData -> cellData.getValue().typeProperty());
         cCQ.setCellValueFactory(cellData -> cellData.getValue().countOfQuestionsProperty().asObject());
@@ -146,7 +155,6 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void addCustom(MouseEvent mouseEvent) {
-        scene = primaryStage.getScene();
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/Layouts/AddCustom.fxml"));
@@ -161,7 +169,6 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void EditClick(MouseEvent mouseEvent) {
-        scene = primaryStage.getScene();
         Controller.custom = customTable.getSelectionModel().getSelectedItem();
         if (Controller.custom == null) ShowAlert(new NullPointerException("Виберіть елемент для редагування"));
         else {
@@ -180,17 +187,10 @@ public class ControllerMain extends Controller{
 
     @FXML
     public void EmployeeClick(MouseEvent mouseEvent) {
-        scene1 = primaryStage.getScene();
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/Layouts/Employee.fxml"));
             primaryStage.setTitle("Main");
-            primaryStage.setScene(new Scene(root));
+            primaryStage.setScene(scene2);
             primaryStage.setResizable(false);
             primaryStage.show();
-        } catch (IOException e) {
-            ShowAlert(e);
-            e.printStackTrace();
-        }
     }
 
     @FXML
@@ -212,5 +212,13 @@ public class ControllerMain extends Controller{
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void CustomerClick(MouseEvent mouseEvent) {
+            primaryStage.setTitle("Main");
+            primaryStage.setResizable(false);
+            primaryStage.setScene(scene3);
+            primaryStage.show();
     }
 }

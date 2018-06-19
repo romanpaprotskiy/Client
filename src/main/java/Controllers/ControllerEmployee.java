@@ -84,7 +84,7 @@ public class ControllerEmployee extends Controller {
         ObservableList<String> list1 = FXCollections.observableArrayList("ID","ПІБ","Посада","Відділ");
         typeSearch.setItems(list1);
         try {
-            EmployeeDAO employeeDAO = new EmployeeDAO(connection);
+            employeeDAO = new EmployeeDAO(connection);
             ObservableList<Employee> list = FXCollections.observableArrayList();
             list.addAll(employeeDAO.selectAllEmployees());
             EmployeeTable.setItems(list);
@@ -117,7 +117,6 @@ public class ControllerEmployee extends Controller {
 
     @FXML
     public void CustomClick(MouseEvent mouseEvent) {
-        scene2 = primaryStage.getScene();
         primaryStage.setTitle("Main");
         primaryStage.setResizable(false);
         primaryStage.setScene(scene1);
@@ -146,7 +145,7 @@ public class ControllerEmployee extends Controller {
     }
 
     public void addEmpl(MouseEvent mouseEvent) {
-        scene3 = primaryStage.getScene();
+        scene2 = primaryStage.getScene();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/Layouts/AddEmployee.fxml"));
             primaryStage.setTitle("Add");
@@ -206,5 +205,25 @@ public class ControllerEmployee extends Controller {
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void updateTable(MouseEvent mouseEvent) {
+        try {
+            ObservableList<Employee> list = FXCollections.observableArrayList();
+            list.addAll(employeeDAO.selectAllEmployees());
+            EmployeeTable.getItems().removeAll();
+            EmployeeTable.setItems(list);
+        } catch (SQLException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
+    }
+
+    public void CustomerClick(MouseEvent mouseEvent) {
+        primaryStage.setTitle("Main");
+        primaryStage.setResizable(false);
+        primaryStage.setScene(scene3);
+        primaryStage.show();
     }
 }

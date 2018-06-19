@@ -9,7 +9,7 @@
     <children>
         <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
            <children>
-               <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="customers" onMouseClicked="#CustomerClick" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../Icons/Customers.png" />
                    </image>

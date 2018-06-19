@@ -47,7 +47,7 @@ public class ControllerEditEmployee extends Controller {
     public void Back(MouseEvent mouseEvent) {
         primaryStage.setTitle("Main");
         primaryStage.setResizable(false);
-        primaryStage.setScene(scene4);
+        primaryStage.setScene(scene2);
         primaryStage.show();
     }
 

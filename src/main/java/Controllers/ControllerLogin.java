@@ -40,7 +40,8 @@ public class ControllerLogin extends Controller {
             if (!connection.getConnection().isClosed()) {
                 Parent root = FXMLLoader.load(getClass().getResource("/Layouts/MainLayout.fxml"));
                 primaryStage.setTitle("Main");
-                primaryStage.setScene(new Scene(root));
+                scene1 = new Scene(root);
+                primaryStage.setScene(scene1);
                 primaryStage.setResizable(false);
                 primaryStage.show();
             }

@@ -6,6 +6,7 @@ import Database.Customer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,10 +17,6 @@ public class CustomerDAO extends DAO {
 
     public CustomerDAO(ConnectionInterface connect) throws SQLException {
         super(connect);
-
-    }
-
-    public void addCustomer(String perCus,String perRep,String address){
 
     }
 
@@ -63,5 +60,62 @@ public class CustomerDAO extends DAO {
         }
         statement.close();
         return list;
+    }
+
+    public void addCustomer(String perCus,String perRep,String addr) throws SQLException {
+        String sql ="INSERT INTO Customer(person_customer, person_representative, Address) " +
+                "VALUES (?,?,?)";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,perCus);
+        statement.setNString(2,perRep);
+        statement.setNString(3,addr);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void deleteCustomer(int id) throws SQLException {
+        String sql = "DELETE FROM Customer WHERE id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setInt(1,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void updatePerCus(int id,String perCus) throws SQLException {
+        String sql = "UPDATE Customer set person_customer = ? where id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,perCus);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void updatePerRep(int id,String perRep) throws SQLException {
+        String sql = "UPDATE Customer set person_representative = ? where id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,perRep);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void updatePerAddress(int id,String address) throws SQLException {
+        String sql = "UPDATE Customer set Address = ? where id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,address);
+        statement.setInt(2,id);
+        statement.executeUpdate();
+        statement.close();
+    }
+
+    public void updateCustomer(int id,String perCus,String perRep,String address) throws SQLException {
+        String sql = "UPDATE Customer SET person_customer = ?,person_representative = ?,Address = ? where id = ?";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,perCus);
+        statement.setNString(2,perRep);
+        statement.setNString(3,address);
+        statement.setInt(4,id);
+        statement.executeUpdate();
+        statement.close();
     }
 }

@@ -43,7 +43,7 @@ public class ControllerEdit extends Controller {
     @FXML
     public void BackClick(MouseEvent mouseEvent) {
         primaryStage.close();
-        primaryStage.setScene(scene);
+        primaryStage.setScene(scene1);
         primaryStage.setTitle("Main");
         primaryStage.show();
     }
