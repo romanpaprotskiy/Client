@@ -8,10 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -42,6 +40,10 @@ public class ControllerCustomer extends Controller {
     public TableColumn<Custom, Date> dateCus;
     @FXML
     public TableColumn<Custom, Date> dateExe;
+    @FXML
+    public TextField searchField;
+    @FXML
+    public ComboBox<String> typeSearch;
 
     private CustomerDAO customerDAO;
     private CustomDAO customDAO;
@@ -56,6 +58,8 @@ public class ControllerCustomer extends Controller {
         dateCus.setCellValueFactory(cellData -> cellData.getValue().date_customProperty());
         dateExe.setCellValueFactory(cellData -> cellData.getValue().dateOfExecutionProperty());
         customerTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> getCustom(newValue));
+        ObservableList<String> list1 = FXCollections.observableArrayList("ID","Замовник");
+        typeSearch.setItems(list1);
         ObservableList<Customer> list = FXCollections.observableArrayList();
         try {
             customerDAO = new CustomerDAO(connection);
@@ -165,5 +169,31 @@ public class ControllerCustomer extends Controller {
             ShowAlert(e);
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void Search(MouseEvent mouseEvent) {
+        try {
+            switch (typeSearch.getValue()) {
+                case "ID":
+                    ObservableList<Customer> list = FXCollections.observableArrayList();
+                    list.addAll(customerDAO.searchID(Integer.parseInt(searchField.getText())));
+                    customerTable.setItems(list);
+                    break;
+                case "Замовник":
+                    ObservableList<Customer> list1 = FXCollections.observableArrayList();
+                    list1.addAll(customerDAO.searchNameCustomer(searchField.getText()));
+                    customerTable.setItems(list1);
+                    break;
+            }
+        } catch (SQLException e) {
+            ShowAlert(e);
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void StatClick(MouseEvent mouseEvent) {
+       primaryStage.setScene(scene5);
     }
 }

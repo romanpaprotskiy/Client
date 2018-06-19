@@ -19,6 +19,7 @@ public abstract class Controller {
     public static Scene scene2;//employee
     public static Scene scene3;//customer
     public static Scene scene4;
+    public static Scene scene5;//statistics
     public static Stage primaryStage;
     public static Stage tempStage;
     public static Stage backStage;

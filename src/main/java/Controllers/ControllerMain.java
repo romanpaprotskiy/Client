@@ -80,8 +80,10 @@ public class ControllerMain extends Controller{
         try {
             Parent root1 = FXMLLoader.load(getClass().getResource("/Layouts/Employee.fxml"));
             Parent root2 = FXMLLoader.load(getClass().getResource("/Layouts/Customer.fxml"));
+            Parent root3 = FXMLLoader.load(getClass().getResource("/Layouts/Statistics.fxml"));
             scene2 = new Scene(root1);
             scene3 = new Scene(root2);
+            scene5 = new Scene(root3);
         } catch (IOException e) {
             ShowAlert(e);
             e.printStackTrace();
@@ -220,5 +222,9 @@ public class ControllerMain extends Controller{
             primaryStage.setResizable(false);
             primaryStage.setScene(scene3);
             primaryStage.show();
+    }
+
+    public void StatisticClick(MouseEvent mouseEvent) {
+        primaryStage.setScene(scene5);
     }
 }

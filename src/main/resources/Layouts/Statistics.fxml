@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="473.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerStatistics">
+    <children>
+        <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
+            <children>
+                <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" onMouseClicked="#CustomerClick" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/Customers.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="employees" fitHeight="56.0" fitWidth="54.0" layoutX="184.0" layoutY="26.0" onMouseClicked="#EmployeeClick" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/Employees.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/statistics.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="customs" fitHeight="54.0" fitWidth="54.0" layoutX="14.0" layoutY="26.0" onMouseClicked="#CustomsClick" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/order.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="exit" fitHeight="39.0" fitWidth="39.0" layoutX="680.0" layoutY="34.0" onMouseClicked="#ExitApp" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Icons/exit.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="main" layoutX="-1.0" layoutY="107.0" prefHeight="366.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
+         <children>
+            <AnchorPane layoutX="189.0" prefHeight="366.0" prefWidth="541.0">
+               <children>
+                  <PieChart fx:id="stat" prefHeight="366.0" prefWidth="541.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="366.0" prefWidth="187.0" style="-fx-background-color: #a1a4a8;">
+               <children>
+                  <ImageView fitHeight="71.0" fitWidth="96.0" layoutX="48.0" layoutY="29.0" onMouseClicked="#CompleteClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/complete.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="54.0" layoutX="57.0" layoutY="118.0" onMouseClicked="#ProfitClick" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/types.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

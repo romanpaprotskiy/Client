@@ -236,4 +236,103 @@ public class CustomDAO extends DAO {
         statement.close();
         return list;
     }
+
+    public int completeCustom() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE dateOfExecution;";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+           i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int appliedCustom() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE ApprovedDirector;";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int allCustom() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom;";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countEcon() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'економічно-правове';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countUs() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'усне';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countP() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'письмове';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countSem() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'семінар';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countZ() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'забезпечення';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
+
+    public int countAu() throws SQLException {
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'аудит';";
+        statement = getConnection().createStatement();
+        ResultSet result  = statement.executeQuery(sql);
+        int i = 0;
+        while (result.next()){
+            i =  result.getInt("count");
+        }
+        return i;
+    }
 }

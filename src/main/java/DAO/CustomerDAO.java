@@ -118,4 +118,32 @@ public class CustomerDAO extends DAO {
         statement.executeUpdate();
         statement.close();
     }
+
+    public ObservableList<Customer> searchID(int id) throws SQLException {
+        String sql = "SELECT Customer.ID AS idCustomer,person_customer,person_representative,Address " +
+                "FROM Customer WHERE id = ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setInt(1,id);
+        ResultSet result = statement.executeQuery();
+        ObservableList<Customer> list = FXCollections.observableArrayList();
+        while (result.next()){
+            list.add(getCustomerFromResultSet(result));
+        }
+        statement.close();
+        return list;
+    }
+
+    public ObservableList<Customer> searchNameCustomer(String name) throws SQLException {
+        String sql = "SELECT Customer.ID AS idCustomer,person_customer,person_representative,Address " +
+                "FROM Customer WHERE person_customer LIKE ?;";
+        PreparedStatement statement = getConnection().prepareStatement(sql);
+        statement.setNString(1,"%" + name + "%");
+        ResultSet result = statement.executeQuery();
+        ObservableList<Customer> list = FXCollections.observableArrayList();
+        while (result.next()){
+            list.add(getCustomerFromResultSet(result));
+        }
+        statement.close();
+        return list;
+    }
 }

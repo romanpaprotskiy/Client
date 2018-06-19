@@ -20,7 +20,7 @@
                         <Image url="@../Icons/Employees.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="statistics" onMouseClicked="#StatClick" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Icons/statistics.png" />
                     </image>
@@ -68,7 +68,7 @@
                     </image>
                 </ImageView>
                 <TextField fx:id="searchField" layoutX="312.0" layoutY="215.0" prefHeight="15.0" prefWidth="149.0" />
-                <ImageView fx:id="search" fitHeight="33.0" fitWidth="33.0" layoutX="472.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="search" onMouseClicked="#Search" fitHeight="33.0" fitWidth="33.0" layoutX="472.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Icons/search.png" />
                     </image>

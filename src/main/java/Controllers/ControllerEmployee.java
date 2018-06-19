@@ -226,4 +226,9 @@ public class ControllerEmployee extends Controller {
         primaryStage.setScene(scene3);
         primaryStage.show();
     }
+
+    @FXML
+    public void StatClick(MouseEvent mouseEvent) {
+        primaryStage.setScene(scene5);
+    }
 }
