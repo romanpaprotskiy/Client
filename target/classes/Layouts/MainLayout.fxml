@@ -9,7 +9,7 @@
     <children>
         <AnchorPane fx:id="top" prefHeight="107.0" prefWidth="733.0" stylesheets="@../Styles/Main.css">
            <children>
-               <ImageView fx:id="customers" onMouseClicked="#CustomerClick" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="customers" fitHeight="56.0" fitWidth="54.0" layoutX="96.0" layoutY="23.0" onMouseClicked="#CustomerClick" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../Icons/Customers.png" />
                    </image>
@@ -19,7 +19,7 @@
                        <Image url="@../Icons/Employees.png" />
                    </image>
                </ImageView>
-               <ImageView fx:id="statistics" onMouseClicked="#StatisticClick" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="statistics" fitHeight="56.0" fitWidth="54.0" layoutX="280.0" layoutY="26.0" onMouseClicked="#StatisticClick" pickOnBounds="true" preserveRatio="true">
                    <image>
                        <Image url="@../Icons/statistics.png" />
                    </image>
@@ -93,12 +93,17 @@
                </image>
             </ImageView>
             <TextField fx:id="searchField" layoutX="312.0" layoutY="215.0" prefHeight="15.0" prefWidth="149.0" />
-            <ImageView fx:id="search" fitHeight="33.0" fitWidth="33.0" layoutX="472.0" layoutY="218.0" onMouseClicked="#Search" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="search" fitHeight="33.0" fitWidth="33.0" layoutX="476.0" layoutY="209.0" onMouseClicked="#Search" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Icons/search.png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="typeSearch" layoutX="312.0" layoutY="251.0" prefWidth="150.0" />
+            <ComboBox fx:id="typeSearch" layoutX="312.0" layoutY="244.0" prefWidth="150.0" />
+            <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="370.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icons/context.png" />
+               </image>
+            </ImageView>
             </children>
         </AnchorPane>
     </children>

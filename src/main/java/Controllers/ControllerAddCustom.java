@@ -1,9 +1,7 @@
 package Controllers;
 
 import DAO.CustomDAO;
-import DAO.CustomerDAO;
 import DAO.EmployeeDAO;
-import Database.Customer;
 import Database.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

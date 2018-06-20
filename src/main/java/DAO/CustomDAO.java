@@ -4,6 +4,11 @@ import Database.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.Year;
+
 import Connection.*;
 
 public class CustomDAO extends DAO {
@@ -270,69 +275,28 @@ public class CustomDAO extends DAO {
         return i;
     }
 
-    public int countEcon() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'економічно-правове';";
+    public Number getCountCustom(String month) throws SQLException {
+        int year = LocalDate.now().getYear();
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE date_custom LIKE '" + year + "-" + month + "-_%_%'";
         statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
+        ResultSet result = statement.executeQuery(sql);
         int i = 0;
         while (result.next()){
-            i =  result.getInt("count");
+            i = result.getInt("count");
         }
         return i;
     }
 
-    public int countUs() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'усне';";
+    public Number getFinishedCustom(String month) throws SQLException {
+        int year = LocalDate.now().getYear();
+        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE dateOfExecution LIKE '" + year + "-" + month + "-_%_%'";
         statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
+        ResultSet result = statement.executeQuery(sql);
         int i = 0;
         while (result.next()){
-            i =  result.getInt("count");
+            i = result.getInt("count");
         }
         return i;
     }
 
-    public int countP() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'письмове';";
-        statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
-        int i = 0;
-        while (result.next()){
-            i =  result.getInt("count");
-        }
-        return i;
-    }
-
-    public int countSem() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'семінар';";
-        statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
-        int i = 0;
-        while (result.next()){
-            i =  result.getInt("count");
-        }
-        return i;
-    }
-
-    public int countZ() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'забезпечення';";
-        statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
-        int i = 0;
-        while (result.next()){
-            i =  result.getInt("count");
-        }
-        return i;
-    }
-
-    public int countAu() throws SQLException {
-        String sql = "SELECT COUNT(id_custom) AS count FROM Custom WHERE Type = 'аудит';";
-        statement = getConnection().createStatement();
-        ResultSet result  = statement.executeQuery(sql);
-        int i = 0;
-        while (result.next()){
-            i =  result.getInt("count");
-        }
-        return i;
-    }
 }
