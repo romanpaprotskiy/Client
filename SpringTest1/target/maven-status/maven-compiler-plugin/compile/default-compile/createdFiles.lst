@@ -1,0 +1,5 @@
+com/spring/test/Application.class
+com/spring/test/Data/Client.class
+com/spring/test/Exceptions/RestResponseEntityExceptionHandler.class
+com/spring/test/Controllers/ClientController.class
+com/spring/test/Repositories/ClientRepository.class

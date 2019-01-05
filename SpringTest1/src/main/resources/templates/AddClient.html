@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AddClient</title>
+</head>
+<body>
+<div>
+    <form action="/" th:action="@{/addClient}" th:object="${client}" method="post">
+        <label for="ClientName">Name:</label>
+        <input id="ClientName" type="text" th:field="*{name}"/>
+        <label for="ClientValue">Value:</label>
+        <input id="ClientValue" type="number" th:field="*{value}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+</body>
+</html>
